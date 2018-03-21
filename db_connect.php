@@ -1,5 +1,6 @@
 <?php
 echo "123";
+echo getenv('DATABASE_URL');
 $dbopts = parse_url(getenv('DATABASE_URL'));
 $app->register(new Csanquer\Silex\PdoServiceProvider\Provider\PDOServiceProvider('pdo'),
                array(
@@ -28,5 +29,4 @@ $app->get('/db/', function() use($app) {
     'names' => $names
   ));
 });
-echo $db;
-echo 'DATABASE_URL';
+echo "\n321";
