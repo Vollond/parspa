@@ -29,3 +29,4 @@ $app->get('/db/', function() use($app) {
   ));
 });
 echo $db;
+echo 'DATABASE_URL';
