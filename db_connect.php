@@ -1,10 +1,10 @@
 <?php
-$db = parse_url(getenv("DATABASE_URL"));
+$db = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $db["path"] = ltrim($db["path"], "/");
-echo $dbopts["port"];
-echo $dbopts["host"];
+echo $db["port"];
+echo $db["host"];
 
-
+/*
 global $db;
 $db = mysql_connect($host,$username,$password) or die("error: Failed_connect_database");
 
@@ -14,3 +14,4 @@ mysql_query('SET NAMES utf8',$db);
 mysql_query('SET CHARACTER SET utf8',$db );
 mysql_query('SET COLLATION_CONNECTION="utf8_general_ci"',$db ); 
 setlocale(LC_ALL,"ru_RU.UTF8");
+*/
