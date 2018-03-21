@@ -1,6 +1,5 @@
 <?php
-echo "123";
-echo getenv('DATABASE_URL');
+echo "123 \n";
 $db = parse_url(getenv("DATABASE_URL"));
 $db["path"] = ltrim($db["path"], "/");
 
