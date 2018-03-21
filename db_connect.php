@@ -1,5 +1,4 @@
 <?php
-echo "123 \n";
 $db = parse_url(getenv("DATABASE_URL"));
 $db["path"] = ltrim($db["path"], "/");
 
@@ -9,3 +8,4 @@ $db["path"] = ltrim($db["path"], "/");
 	$result = pg_fetch_assoc($result); 
 	echo $result['field_1'] . '</br>' . $result['field_2'];
         pg_close($db);
+echo "123 \n";
