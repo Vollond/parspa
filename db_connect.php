@@ -7,7 +7,7 @@ $username = "bd8f9d12dfabef";
 $databasename = "heroku_6da0db36e924815";
 echo "1";
 global $db;
-$db = mysql_connect($host,$username,$password) or die("error: Failed_connect_database");
+$db = mysql_connect($host,$username,$password) or echo "error: Failed_connect_database");
 echo "2";
 mysql_select_db($databasename, $db) or die("error:Database not selected witch mysql_select_db");
 echo "3";
