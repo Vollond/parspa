@@ -1,11 +1,16 @@
 <?php
-$db = parse_url(getenv("DATABASE_URL"));
+$db = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $db["path"] = ltrim($db["path"], "/");
+echo $dbopts["port"];
+echo $dbopts["host"];
 
 
-	$query = "select 'Привет!' as field_1, 123 as field_2";
-	$result = pg_query($db, $query);
-	$result = pg_fetch_assoc($result); 
-	echo $result['field_1'] . '</br>' . $result['field_2'];
-        pg_close($db);
-echo "123 \n";
+global $db;
+$db = mysql_connect($host,$username,$password) or die("error: Failed_connect_database");
+
+mysql_select_db($databasename, $db) or die("error:Database not selected witch mysql_select_db");
+
+mysql_query('SET NAMES utf8',$db);
+mysql_query('SET CHARACTER SET utf8',$db );
+mysql_query('SET COLLATION_CONNECTION="utf8_general_ci"',$db ); 
+setlocale(LC_ALL,"ru_RU.UTF8");
