@@ -15,7 +15,7 @@ if(true){
 }
 
 // создаем переменную бота
-$token = "487405665:AAF3w09dg4a-of_ZBCmEWolqbZqNh1Pk";
+$token = "355191192:AAFcc27gsCm_12PK0ar-1dhg56tMbOc55_w";
 $bot = new \TelegramBot\Api\Client($token,null);
 
 if($_GET["bname"] == "revcombot"){
@@ -107,6 +107,16 @@ function kk(){
  	return $current;
 }   
 
+   function wr($lol){
+	   $file = 'wr.txt';
+	    	if ($lol==777)
+		{$current='stop';
+		file_put_contents($file, $current);}
+		$current='test!';
+		file_put_contents($file, $current);
+ 	return $current;
+}  
+
 // Команды бота
 // пинг. Тестовая
 $bot->command('ping', function ($message) use ($bot) {
@@ -141,6 +151,11 @@ $bot->command('prom', function ($message) use ($bot) {
 //$bot->sendMessage($message->getChat()->getId(), "1");
 //$bot->promoteChatMember(-1001088197401, 441528629, can_pin_messages=True);
 $bot->sendMessage($message->getChat()->getId(), "да?");
+});
+
+$bot->command('wr', function ($message) use ($bot) {
+$bot->sendMessage($message->getChat()->getId(), "да?");
+$answer=wr(777);
 });
 
 $bot->command('bd', function ($message) use ($bot) {
