@@ -8,8 +8,7 @@ header('Content-Type: text/html; charset=utf-8');
 // подрубаем API
 require_once("vendor/autoload.php");
 // подрубаем базу данных
-require_once("db_connect.php");
-require_once("users.php");
+
 
 // дебаг
 if(true){
