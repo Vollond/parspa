@@ -5,7 +5,7 @@ echo $db["port"];
 ecch "  \n";
 echo $db["host"];
 ecch "  \n";
-echo $db ["path"]
+echo $db ["path"];
 ecch "  \n";
 echo $db ["user"];
 
