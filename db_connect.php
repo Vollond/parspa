@@ -2,11 +2,11 @@
 $db = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $db["path"] = ltrim($db["path"], "/");
 echo $db["port"];
-ecch "  ";
+echo "  \n";
 echo $db["host"];
-ecch "  ";
+echo "  \n";
 echo $db["path"];
-ecch "  \n";
+echo "  \n";
 echo $db["user"];
 
 
