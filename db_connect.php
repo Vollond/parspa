@@ -7,7 +7,7 @@ echo $db["host"];
 ecch "  \n";
 echo $db ["path"]
 ecch "  \n";
-echo $db ["user"]
+echo $db ["user"];
 
 
 global $db;
