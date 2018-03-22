@@ -1,17 +1,17 @@
 <?php
 /** модель работы с пользователями **/
-
+/*
 require_once("db_connect.php");
 global $db;
 $name = "123";
-$result = mysqli_query("select from users where name = '{$name}' LIMIT 1",$db);
+$result = mysqli_query("select from users where name = '' LIMIT 1",$db);
 echo "$result";
-/*
+
 if(mysqli_fetch_array($result) !== false) echo "не фолс";
 var_dump $result;
-*/
-echo "   \n \n да?";
 
+echo "   \n \n да?";
+*/
 function make_user($name,$chat_id){
 	global $db;
 //	$name = mysqli_real_escape_string($name);
@@ -25,7 +25,7 @@ function make_user($name,$chat_id){
 function is_user_set($name){
 	global $db;
 //	$name = mysqli_real_escape_string($name);
-	$result = mysqli_query("select * from users where name='asd' LIMIT 1",$db);
+	$result = mysqli_query("select from users where name='asd' LIMIT 1",$db);
 
     if(mysqli_fetch_array($result) !== false) return true;
     return false;
