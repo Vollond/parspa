@@ -9,7 +9,7 @@ if (mysqli_connect_errno()) {
 	echo mysqli_connect_error();
 }
 
-$query = "insert into users (name) values('asd')";
+$query = "insert into users (name) values('bsc')";
 //$query= "SHOW databases";
 mysqli_query($db, $query) or die("пользователя создать не удалось");
 echo mysqli_error;
