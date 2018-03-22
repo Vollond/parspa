@@ -191,6 +191,7 @@ $bot->command('reg2', function ($message) use ($bot) {
 	if(is_user_set($message->getFrom()->getUsername()) == false){
 		make_user($message->getFrom()->getUsername(),$cid);
 	}
+	else {$bot->sendMessage($message->getChat()->getId(), "уже есть");}
 	$bot->sendMessage($message->getChat()->getId(), "вышло?");
 
 });
