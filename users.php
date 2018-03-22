@@ -12,15 +12,15 @@ var_dump $result;
 
 echo "   \n \n да?";
 */	
-/*
+
 require_once("db_connect.php");
 global $db;
 
-	$query = "select * from users where name='asd' LIMIT 1')";
+	$query = "select * from users where name='asd' LIMIT 1)";
 	$result = mysql_fetch_array(mysqli_query($db,$query));
-	IF(isset($a['pole_name'])) echo 'Повтор'; 
+	if(isset($result['name'])) echo 'Повтор'; 
 	else echo 'Уникальная запись';
-*/
+
 
 function make_user($name,$chat_id){
 	global $db;
