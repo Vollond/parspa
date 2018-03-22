@@ -195,6 +195,7 @@ $bot->on(function($Update) use ($bot){
 	$cid = $message->getChat()->getId();
 	
 	//if(is_user_set($message->getFrom()->getUsername()) == false){
+				make_user("testtt");
 		make_user($message->getFrom()->getUsername(),$cid);
 	//}
 	
