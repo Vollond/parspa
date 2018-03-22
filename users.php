@@ -19,6 +19,7 @@ global $db;
 	$query = "select * from users where name='asd' LIMIT 1)";
 	$result = mysqli_fetch_array(mysqli_query($db,$query));
 	echo 'test';
+	echo "$result";
 	if(isset($result['name'])) echo 'Повтор'; 
 	else echo 'Уникальная запись';
 
