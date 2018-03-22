@@ -1,5 +1,6 @@
 <?php
 /** модель работы с пользователями **/
+/*
 require_once("db_connect.php");
 global $db;
 
@@ -12,14 +13,12 @@ $query = "insert into users (name) values('bsc')";
 //$query= "SHOW databases";
 mysqli_query($db, $query) or die("пользователя создать не удалось");
 echo $mysqli_error;
-echo "$res \n";
-echo "true \n";
-
+*/
 function make_user($name,$chat_id){
 	global $db;
 	$name = mysqli_real_escape_string($name);
-	$chat_id = mysqli_real_escape_string($chat_id);
-	$query = "insert into `users`(name,chat_id) values('{$name}','{$chat_id}')";
+//	$chat_id = mysqli_real_escape_string($chat_id);
+	$query = "insert into users (name) values('{$name}')";
 	mysqli_query($query,$db) or die("пользователя создать не удалось");
 	echo "удалось? \n";
 }

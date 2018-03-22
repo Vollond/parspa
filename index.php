@@ -177,8 +177,9 @@ $bot->command('reg', function ($message) use ($bot) {
     $answer = 'По
 	пробуем...';
     $bot->sendMessage($message->getChat()->getId(), $answer);
+	make_user($message->getFrom()->getUsername());
 	$message = $Update->getMessage();
-	make_user($message->getFrom()->getUsername(),$cid);
+	make_user($message->getFrom()->getUsername());
 	$bot->sendMessage($message->getChat()->getId(), "вышло?");
 });
 
