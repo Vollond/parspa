@@ -11,7 +11,7 @@ if (mysqli_connect_errno()) {
 
 $query = "insert into 'users' (name) values('asd')";
 //$query= "SHOW databases";
-$res= mysqli_query($db, $query) or die("пользователя создать не удалось");
+mysqli_query($db, $query) or die("пользователя создать не удалось");
 echo "$res \n";
 echo "true \n";
 
