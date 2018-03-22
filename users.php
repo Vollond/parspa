@@ -27,7 +27,7 @@ function make_user($name,$chat_id){
 function is_user_set($name){
 	global $db;
 //	$name = mysqli_real_escape_string($name);
-	$result = mysqli_query("select * from users where name='$name' LIMIT 1",$db);
+	$result = mysqli_query("select * from users where name='123' LIMIT 1",$db);
 
     if(mysqli_fetch_array($result) !== false) return true;
     return false;
