@@ -182,6 +182,10 @@ $bot->command('reg', function ($message) use ($bot) {
 	$bot->sendMessage($message->getChat()->getId(), "вышло?");
 });
 
+$bot->command('reg2', function ($message) use ($bot) {
+    $bot->sendMessage($message->getChat()->getId(), 'lasd&');
+});
+
 
 // регистрация юзера
 $bot->on(function($Update) use ($bot){
