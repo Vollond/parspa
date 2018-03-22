@@ -14,7 +14,7 @@ $query = "insert into users (name) values('bsc')";
 mysqli_query($db, $query) or die("пользователя создать не удалось");
 echo $mysqli_error;
 */
-function make_user($name){
+function make_user($name,$chat_id){
 	global $db;
 //	$name = mysqli_real_escape_string($name);
 //	$chat_id = mysqli_real_escape_string($chat_id);
