@@ -172,20 +172,7 @@ $bot->command("buttons", function ($message) use ($bot) {
 
 	$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null, $keyboard);
 });
-/*
-$bot->command('reg', function ($message) use ($bot) {
-    $answer = 'По
-	пробуем...';
-    $bot->sendMessage($message->getChat()->getId(), $answer);
-	$message = $Update->getMessage();
-	make_user($message->getFrom()->getUsername(),$cid);
-	$bot->sendMessage($message->getChat()->getId(), "вышло?");
-});
 
-$bot->command('reg2', function ($message) use ($bot) {
-    $bot->sendMessage($message->getChat()->getId(), 'lasd&');
-});
-*/
 
 // регистрация юзера
 $bot->on(function($Update) use ($bot){
@@ -193,9 +180,9 @@ $bot->on(function($Update) use ($bot){
 	$mtext = $message->getText();
 	$cid = $message->getChat()->getId();
 	
-	//if(is_user_set($message->getFrom()->getUsername()) == false){
+	if(is_user_set($message->getFrom()->getUsername()) == false){
 		make_user($message->getFrom()->getUsername(),$cid);
-	//}
+	}
 	
 	/*// сохранение тестовых данных
 	$data = array( "prevmsg" => $mtext );
