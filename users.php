@@ -5,11 +5,13 @@ require_once("db_connect.php");
 global $db;
 
 $result = mysqli_query("select * from users where name='asd' LIMIT 1",$db);
-echo "$result";
+var_dump $result;
 /*
 if(mysqli_fetch_array($result) !== false) echo "не фолс";
 var_dump $result;
 */
+echo "   \n \n да?";
+
 function make_user($name,$chat_id){
 	global $db;
 //	$name = mysqli_real_escape_string($name);
