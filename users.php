@@ -7,6 +7,7 @@ function make_user($name,$chat_id){
 	$chat_id = mysqli_real_escape_string($chat_id);
 	$query = "insert into `users`(name,chat_id) values('{$name}','{$chat_id}')";
 	mysqli_query($query,$db) or die("пользователя создать не удалось");
+	echo "удалось? \n"
 }
 
 function is_user_set($name){
