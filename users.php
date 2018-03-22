@@ -21,11 +21,17 @@ function make_user($name,$chat_id){
 
 	mysqli_query($db,$query) or die("пользователя создать не удалось");
 }
+/*
+$a = @mysql_fetch_array(mysql_query("SELECT 'pole_name' FROM 'table' WHERE 'pole_name'='".$name."' LIMIT 1")); 
+IF(isset($a['pole_name'])) echo 'Повтор'; 
+else echo 'Уникальная запись';
+*/
 
 function is_user_set($name){
 	global $db;
 //	$name = mysqli_real_escape_string($name);
-	$result = mysqli_query($db, "select from users where name='asd' LIMIT 1");
+	$query = "select * from 'users' where name='asd' LIMIT 1')";
+	$result = mysqli_query($db,$query);
 
     if(mysqli_fetch_array($result) !== false) return true;
     return false;
