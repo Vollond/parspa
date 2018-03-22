@@ -271,6 +271,7 @@ $bot->on(function($Update) use ($bot){
 	$cid = $message->getChat()->getId();
 	
 	// array of https://github.com/TelegramBot/Api/blob/master/src/Types/PhotoSize.php
+	/*
 	$photos = $message->getPhoto();
 	if(!empty($photos)) foreach($photos as $ph){
 		$fileId = $ph->getFileId();
@@ -278,7 +279,7 @@ $bot->on(function($Update) use ($bot){
 		file_put_contents("file.jpg",$data);
 		$bot->sendMessage($message->getChat()->getId(), "Файл загружен");
 	}
-	
+	*/
 	if(mb_stripos($mtext,"Сиськи") !== false){
 		$pic = "http://aftamat4ik.ru/wp-content/uploads/2017/05/14277366494961.jpg";
 
