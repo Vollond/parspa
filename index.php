@@ -174,12 +174,13 @@ $bot->command("buttons", function ($message) use ($bot) {
 });
 
 $bot->command('reg', function ($message) use ($bot) {
+		$cid = $message->getChat()->getId();
+
     $answer = 'По
 	пробуем...';
     $bot->sendMessage($message->getChat()->getId(), $answer);
-	make_user($message->getFrom()->getUsername());
 	$message = $Update->getMessage();
-	make_user($message->getFrom()->getUsername());
+make_user($message->getFrom()->getUsername(),$cid);
 	$bot->sendMessage($message->getChat()->getId(), "вышло?");
 });
 
