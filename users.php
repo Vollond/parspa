@@ -1,10 +1,11 @@
 <?php
 /** модель работы с пользователями **/
-/*
+
 require_once("db_connect.php");
 global $db;
 
 $result = mysqli_query("select * from users where name='asd' LIMIT 1",$db);
+/*
 if(mysqli_fetch_array($result) !== false) echo "не фолс";
 var_dump $result;
 */
