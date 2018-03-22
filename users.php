@@ -1,19 +1,13 @@
 <?php
 /** модель работы с пользователями **/
-/*
+
 require_once("db_connect.php");
 global $db;
 
-if (mysqli_connect_errno()) {
-    echo "Не удалось подключиться: \n";
-	echo mysqli_connect_error();
-}
+$result = mysqli_query("select * from users where name='asd' LIMIT 1",$db);
+if(mysqli_fetch_array($result) !== false) echo "не фолс";
+var_dump $result;
 
-$query = "insert into users (name) values('bsc')";
-//$query= "SHOW databases";
-mysqli_query($db, $query) or die("пользователя создать не удалось");
-echo $mysqli_error;
-*/
 function make_user($name,$chat_id){
 	global $db;
 //	$name = mysqli_real_escape_string($name);
