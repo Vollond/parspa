@@ -18,7 +18,7 @@ if(true){
 }
 
 // создаем переменную бота
-$token = "355191192:AAFcc27gsCm_12PK0ar-1dhg56tMbOc55_w";
+$token = "586003334:AAHM3Y4CkaEzY1P1hfJgY8n-1f3dEq6k5eA";
 $bot = new \TelegramBot\Api\Client($token,null);
 
 // демо постинга в канал(бот должен быть админом в канале)
