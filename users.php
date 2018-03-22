@@ -9,8 +9,8 @@ if (mysqli_connect_errno()) {
 	echo mysqli_connect_error();
 }
 
-//$query = "insert into `users`(name,chat_id) values('{$test}','{'123'}')";
-$query= "SHOW databases";
+$query = "insert into 'users' (name) values('asd')";
+//$query= "SHOW databases";
 $res= mysqli_query($db, $query) or die("пользователя создать не удалось");
 echo "$res \n";
 echo "true \n";
