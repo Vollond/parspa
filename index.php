@@ -186,6 +186,13 @@ $bot->command('reg', function ($message) use ($bot) {
 
 $bot->command('reg2', function ($message) use ($bot) {
     $bot->sendMessage($message->getChat()->getId(), 'lasd&');
+	$cid = $message->getChat()->getId();
+
+	if(is_user_set($message->getFrom()->getUsername()) == false){
+		make_user($message->getFrom()->getUsername(),$cid);
+	}
+	$bot->sendMessage($message->getChat()->getId(), "вышло?");
+
 });
 
 
