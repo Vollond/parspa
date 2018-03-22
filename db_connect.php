@@ -5,7 +5,7 @@ $host = "eu-cdbr-west-02.cleardb.net:3306"; // в 90% случаев это ме
 $password = "faf87cca";
 $username = "bd8f9d12dfabef";
 $databasename = "heroku_6da0db36e924815";
-echo "1";
+phpinfo();
 global $db;
 $db = mysql_connect($host,$username,$password);
 echo "2";
