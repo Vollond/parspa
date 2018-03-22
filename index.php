@@ -172,7 +172,7 @@ $bot->command("buttons", function ($message) use ($bot) {
 
 	$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null, $keyboard);
 });
-/*
+
 $bot->command('reg', function ($message) use ($bot) {
     $answer = 'По
 	пробуем...';
@@ -185,7 +185,7 @@ $bot->command('reg', function ($message) use ($bot) {
 $bot->command('reg2', function ($message) use ($bot) {
     $bot->sendMessage($message->getChat()->getId(), 'lasd&');
 });
-*/
+
 
 // регистрация юзера
 $bot->on(function($Update) use ($bot){
