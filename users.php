@@ -41,7 +41,7 @@ function is_user_set($name){
 	global $db;
 //	$name = mysqli_real_escape_string($name);
 	$query = "select * from users where name='asd' LIMIT 1";
-	$result = mysql_fetch_array(mysqli_query($db,$query));
+	$result = mysqli_query($db,$query);
 	
     if(mysqli_fetch_array($result) !== false) return true;
     return false;
