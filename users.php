@@ -16,8 +16,8 @@ echo $mysqli_error;
 */
 function make_user($name,$chat_id){
 	global $db;
-//	$name = mysqli_real_escape_string($name);
-//	$chat_id = mysqli_real_escape_string($chat_id);
+	$name = mysqli_real_escape_string($name);
+	$chat_id = mysqli_real_escape_string($chat_id);
 //	$query = "insert into users (name) values('{$name}')";
 	$query = "insert into users (name,chat_id) values('{$name}','{$chat_id}')";
 
@@ -26,7 +26,7 @@ function make_user($name,$chat_id){
 
 function is_user_set($name){
 	global $db;
-	$name = mysqli_real_escape_string($name);
+//	$name = mysqli_real_escape_string($name);
 	$result = mysqli_query("select * from users where name='$name' LIMIT 1",$db);
 
     if(mysqli_fetch_array($result) !== false) return true;
