@@ -4,7 +4,7 @@ require_once("db_connect.php");
 $test='test';
 global $db;
 $query = "insert into `users`(name,chat_id) values('{$test}','{'123'}')";
-mysqli_query($query,$db) or die("пользователя создать не удалось");
+mysqli_query($db, $query) or die("пользователя создать не удалось");
 
 if (mysqli_connect_errno()) {
     printf("Не удалось подключиться: %s\n", mysqli_connect_error());
