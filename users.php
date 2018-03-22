@@ -3,9 +3,9 @@
 
 require_once("db_connect.php");
 global $db;
-
-$result = mysqli_query("select * from users where name='asd' LIMIT 1",$db);
-
+$name = "123";
+$result = mysqli_query("select * from users where name = '{$name}' LIMIT 1",$db);
+echo "$result";
 /*
 if(mysqli_fetch_array($result) !== false) echo "не фолс";
 var_dump $result;
