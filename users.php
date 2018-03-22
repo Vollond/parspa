@@ -1,8 +1,10 @@
 <?php
 /** модель работы с пользователями **/
 $test='test';
+global $db;
 $query = "insert into `users`(name,chat_id) values('{$test}','{'123'}')";
-echo 'true\n';
+mysqli_query($query,$db) or die("пользователя создать не удалось");
+echo "true \n";
 function make_user($name,$chat_id){
 	global $db;
 	$name = mysqli_real_escape_string($name);
