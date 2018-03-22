@@ -11,7 +11,17 @@ if(mysqli_fetch_array($result) !== false) echo "не фолс";
 var_dump $result;
 
 echo "   \n \n да?";
+*/	
+/*
+require_once("db_connect.php");
+global $db;
+
+	$query = "select * from users where name='asd' LIMIT 1')";
+	$result = mysql_fetch_array(mysqli_query($db,$query));
+	IF(isset($a['pole_name'])) echo 'Повтор'; 
+	else echo 'Уникальная запись';
 */
+
 function make_user($name,$chat_id){
 	global $db;
 //	$name = mysqli_real_escape_string($name);
@@ -30,9 +40,9 @@ else echo 'Уникальная запись';
 function is_user_set($name){
 	global $db;
 //	$name = mysqli_real_escape_string($name);
-	$query = "select * from 'users' where name='asd' LIMIT 1')";
-	$result = mysqli_query($db,$query);
-
+	$query = "select * from users where name='asd' LIMIT 1";
+	$result = mysql_fetch_array(mysqli_query($db,$query));
+	
     if(mysqli_fetch_array($result) !== false) return true;
     return false;
 }
