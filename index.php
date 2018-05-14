@@ -63,6 +63,30 @@ $bot->command('help', function ($message) use ($bot) {
     $bot->sendMessage($message->getChat()->getId(), $answer);
 });
 
+$bot->command('savetest', function ($message) use ($bot) {
+    $bot->sendMessage($message->getChat()->getId(), "123");
+	$data = array( "prevmsg" => $mtext );
+	set_udata($message->getFrom()->getUsername(), $data);
+	
+	// тест получения данных
+	$data = get_udata($message->getFrom()->getUsername());
+	$bot->sendMessage($message->getChat()->getId(), json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+	
+});
+
+/*	// сохранение тестовых данных
+	$data = array( "prevmsg" => $mtext );
+	set_udata($message->getFrom()->getUsername(), $data);
+	
+	// тест получения данных
+	$data = get_udata($message->getFrom()->getUsername());
+	$bot->sendMessage($message->getChat()->getId(), json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+	*/
+
+
+
+
+
 // передаем картинку
 $bot->command('getpic', function ($message) use ($bot) {
 	$pic = "http://aftamat4ik.ru/wp-content/uploads/2017/03/photo_2016-12-13_23-21-07.jpg";
