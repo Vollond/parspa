@@ -7,6 +7,9 @@
 header('Content-Type: text/html; charset=utf-8');
 // подрубаем API
 require_once("vendor/autoload.php");
+// подрубаем базу данных
+require_once("db_connect.php");
+require_once("users.php");
 
 // дебаг
 if(true){
@@ -18,8 +21,9 @@ if(true){
 $token = "586003334:AAHM3Y4CkaEzY1P1hfJgY8n-1f3dEq6k5eA";
 $bot = new \TelegramBot\Api\Client($token,null);
 
-if($_GET["bname"] == "revcombot"){
-	$bot->sendMessage("@burgercaputt", "Тест");
+// демо постинга в канал(бот должен быть админом в канале)
+if($_GET["bname"] == "post_channel"){
+	$bot->sendMessage("@ваш канал", "Тест");
 }
 
 // если бот еще не зарегистрирован - регистируем
@@ -49,9 +53,19 @@ $bot->command('start', function ($message) use ($bot) {
     $bot->sendMessage($message->getChat()->getId(), $answer);
 });
 
+$bot->command('hi', function ($message) use ($bot) {
+    $answer = '@Advanceup - Массовое добавление подписчиков в ваши каналы и чаты';
+    $bot->sendMessage(-1001327449385, $answer);
+	$bot->sendMessage($message->getChat()->getId(), $answer);
+});
+
+
 // помощ
 $bot->command('help', function ($message) use ($bot) {
     $answer = 'Команды:
+/ibutton - кнопки в сообщении
+/buttons - reply-панель с кнопками
+/getdoc - тестовый документ
 /help - помощ';
     $bot->sendMessage($message->getChat()->getId(), $answer);
 });
@@ -155,7 +169,7 @@ $bot->inlineQuery(function ($inlineQuery) use ($bot) {
 	try{
 		$result = $bot->answerInlineQuery( $qid, [$msg,$photo,$mp3,$video],100,false);
 	}catch(Exception $e){
-		file_put_contents("rdata",print_r($e,true));
+		file_put_contents("errdata",print_r($e,true));
 	}
 });
 
@@ -166,16 +180,126 @@ $bot->command("buttons", function ($message) use ($bot) {
 	$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null, $keyboard);
 });
 
-// Отлов любых сообщений + обрабтка reply-кнопок
+$bot->command('reg', function ($message) use ($bot) {
+		$cid = $message->getChat()->getId();
+
+    $answer = 'По
+	пробуем...';
+    $bot->sendMessage($message->getChat()->getId(), $answer);
+	//$message = $Update->getMessage();
+	make_user($message->getFrom()->getUsername(),$cid);
+	$bot->sendMessage($message->getChat()->getId(), "вышло?");
+});
+
+$bot->command('reg2', function ($message) use ($bot) {
+    $bot->sendMessage($message->getChat()->getId(), 'lasd&');
+	$cid = $message->getChat()->getId();
+
+	if(is_user_set($message->getFrom()->getUsername()) == false){
+		make_user($message->getFrom()->getUsername(),$cid);
+	}
+	else {$bot->sendMessage($message->getChat()->getId(), "уже есть");}
+	$bot->sendMessage($message->getChat()->getId(), "вышло?");
+
+});
+
+
+// регистрация юзера
 $bot->on(function($Update) use ($bot){
-	
 	$message = $Update->getMessage();
 	$mtext = $message->getText();
 	$cid = $message->getChat()->getId();
 	
-	if(mb_stripos($mtext,"Сиськи") !== false){
-		$pic = "http://aftamat4ik.ru/wp-content/uploads/2017/05/14277366494961.jpg";
+	//if(is_user_set($message->getFrom()->getUsername()) == false){
+		make_user($message->getFrom()->getUsername(),$cid);
+	//}
+	
+	/*// сохранение тестовых данных
+	$data = array( "prevmsg" => $mtext );
+	set_udata($message->getFrom()->getUsername(), $data);
+	
+	// тест получения данных
+	$data = get_udata($message->getFrom()->getUsername());
+	$bot->sendMessage($message->getChat()->getId(), json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));*/
+	
+	
+	$data = get_udata($message->getFrom()->getUsername()); // получаем массив данных
+	if(!isset($data["mode"])){ // если в нем нет режима - значит человек еще не взаимодействовал с этой командой
+		$mode = "name"; // поэтому задаем ему действие по дефолту
+	}else{
+		$mode = $data["mode"];
+	}
+	
+	if($mtext == "/dbact"){
+		// по команде /dbact запускаем цепочку
+		if($mode == "name"){
+			$bot->sendMessage($message->getChat()->getId(), "Добрый день, укажите, пожалуйста, ваше имя");
+			$data["mode"] = "aftername";
+			set_udata($message->getFrom()->getUsername(), $data); // сохраняем изменения
+		}
+		
+	}
+	if($mode == "aftername"){
+		// помещаем имя в массив данных
+		$data["name"] = $message->getText(); // очевидно, что после запроса имени пользователь отправит следюущей командой свое имя, то есть оно будет в тексте сообщения.
+		$bot->sendMessage($message->getChat()->getId(), "Добрый день, укажите ваш сайт");
+		$data["mode"] = "website";
+		set_udata($message->getFrom()->getUsername(), $data); // сохраняем изменения
+	}
+	if($mode == "website"){
+		$data["website"] = $message->getText(); // очевидно, что после запроса сайта пользователь отправит следюущей командой свой сайт, то есть адрес будет в тексте сообщения.
+		$bot->sendMessage($message->getChat()->getId(), "спасибо.");
+		$data["mode"] = "done";
+		set_udata($message->getFrom()->getUsername(), $data); // сохраняем изменения
+	}
+	
+	if($mode == "done"){
+		// если человек уже прошел опрос - выводим ему собранную у него-же информацию
+		$bot->sendMessage($message->getChat()->getId(), "Вы уже проходили опрос и указали такие данные:\nИмя - ".$data["name"]."\nсайт - ".$data["website"]);
+	}
+	
+}, function($message) use ($name){
+	return true; // когда тут true - команда проходит
+});
 
+// Отлов любых сообщений + обрабтка reply-кнопок
+$bot->on(function($Update) use ($bot){
+	
+	/* обработка постов из канала
+	$cpost = $Update->getChannelPost();
+	if($cpost){
+		// текст
+		$text = $cpost->getText();
+		// фотки
+		$photo = $cpost->getPhoto();
+		if($photo){
+			$photo_id = $photo[0]->getFileId();
+			$file = $bot->getFile($photo_id);
+			$furl = $bot->getFileUrl().'/'.$file->getFilePath();
+			file_put_contents(basename($furl), file_get_contents( $furl ) );
+		}
+		file_put_contents("lastmsg",$text);
+	}*/
+	// все что ниже - нахуй не нужно(внашем случае)!
+	//file_put_contents("mtext",$bot->getRawBody()); - получение всего json ответа
+	$message = $Update->getMessage();
+	$mtext = $message->getText();
+	$cid = $message->getChat()->getId();
+	
+	// array of https://github.com/TelegramBot/Api/blob/master/src/Types/PhotoSize.php
+
+	$photos = $message->getPhoto();
+	if(!empty($photos)) foreach($photos as $ph){
+		$fileId = $ph->getFileId();
+		$data = $bot->downloadFile($fileId);
+		file_put_contents("file.jpg",$data);
+		$bot->sendMessage($message->getChat()->getId(), "Файл загружен");
+	}
+
+	if(mb_stripos($mtext,"Сиськи") !== false){
+		$answer = 'Добро пожаловать!';
+		$bot->sendMessage($message->getChat()->getId(), $answer);
+		$pic = "http://aftamat4ik.ru/wp-content/uploads/2017/05/14277366494961.jpg";
 		$bot->sendPhoto($message->getChat()->getId(), $pic);
 	}
 	if(mb_stripos($mtext,"власть советам") !== false){
