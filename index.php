@@ -45,7 +45,7 @@ if(!file_exists("registered.trigger")){
 // пинг. Тестовая
 $bot->command('ping', function ($message) use ($bot) {
 	$bot->sendMessage($message->getChat()->getId(), 'pong!');
-	$bot->sendMessage($message->getChat()->getId(), $message->getReply_to_message()->getText());
+	$bot->sendMessage($message->getChat()->getId(), $message->getReply_to_message_id()->getText());
 	$bot->sendMessage($message->getChat()->getId(), 'pong2!');
 });
 		
@@ -309,7 +309,7 @@ $bot->on(function($Update) use ($bot){
 	}
 	
 	if(mb_stripos($mtext,"123") !== false){
-		$bot->sendMessage($message->getChat()->getId(), $message->getReply_to_message()->getText());
+		$bot->sendMessage($message->getChat()->getId(), $message->getReply_to_message_id()->getText());
 	}
 	
 	if($message->getReply_to_message() !== false){
