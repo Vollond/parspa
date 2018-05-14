@@ -307,12 +307,12 @@ $bot->on(function($Update) use ($bot){
 	
 if(mb_stripos($mtext,"Обратная связь") !== false){
 		// по команде /dbact запускаем цепочку
-		if($sv == "obrsv"){
+		$data["sv"] = "obrsv";
+		set_udata($message->getFrom()->getUsername(), $data); 
 		$bot->sendMessage($message->getChat()->getId(), "Напишите свой вопрос и вам ответят в ближайшее время");
-			$data["sv"] = "obrsv2";
-			}
+
 	}
-	if($sv == "obrsv2"){
+	if($sv == "obrsv"){
 				$bot->sendMessage(322682583, $mtext);
 	}
 	
