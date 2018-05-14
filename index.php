@@ -247,11 +247,11 @@ $bot->sendMessage($message->getChat()->getId(), "старт");
 		set_udata($message->getFrom()->getUsername(), $data); // сохраняем изменения
 	}
 	
-	if($mode == "done"){
+	/*if($mode == "done"){
 		// если человек уже прошел опрос - выводим ему собранную у него-же информацию
 		$bot->sendMessage($message->getChat()->getId(), "Вы уже проходили опрос и указали такие данные:\nИмя - ".$data["name"]."\nсайт - ".$data["website"]);
 	}
-	
+	*/
 }, function($message) use ($name){
 	return true; // когда тут true - команда проходит
 });
