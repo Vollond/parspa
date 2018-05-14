@@ -297,8 +297,9 @@ $bot->on(function($Update) use ($bot){
 	}
 	*/
 	if(mb_stripos($mtext,"Сиськи") !== false){
+		$answer = 'Добро пожаловать!';
+		$bot->sendMessage($message->getChat()->getId(), $answer);
 		$pic = "http://aftamat4ik.ru/wp-content/uploads/2017/05/14277366494961.jpg";
-
 		$bot->sendPhoto($message->getChat()->getId(), $pic);
 	}
 	if(mb_stripos($mtext,"власть советам") !== false){
