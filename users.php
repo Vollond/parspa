@@ -12,6 +12,7 @@ var_dump $result;
 
 echo "   \n \n да?";
 */	
+/*
 echo "start";
 require_once("db_connect.php");
 	global $db;
@@ -23,7 +24,7 @@ require_once("db_connect.php");
 	mysqli_query($db,"update users SET data_json = '{$data}' WHERE name = '{$name}'"); // обновляем запись в базе
 echo "   \n \n да?";
 	
-	
+	*/
 function make_user($name,$chat_id){
 	global $db;
 //	$name = mysqli_real_escape_string($name);
