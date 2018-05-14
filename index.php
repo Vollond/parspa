@@ -71,7 +71,7 @@ $bot->command('savetest', function ($message) use ($bot) {
 	// тест получения данных
 	$data = get_udata($message->getFrom()->getUsername());
 	$bot->sendMessage($message->getChat()->getId(), json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
-	
+	$bot->sendMessage($message->getChat()->getId(), "456");
 });
 
 /*	// сохранение тестовых данных

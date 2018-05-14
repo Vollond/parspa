@@ -54,7 +54,7 @@ function get_udata($name){
 	global $db;
 	$res = array();
 	//$name = mysqli_real_escape_string($name);
-	$result = mysqli_query("select * from users where name='$name'",$db);
+	$result = mysqli_query($db, "select * from users where name='$name'");
 	$arr = mysqli_fetch_assoc($result);
     if(isset($arr['data_json'])){
 		$res = json_decode($arr['data_json'], true);
