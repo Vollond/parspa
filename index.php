@@ -54,6 +54,7 @@ $bot->command('ping', function ($message) use ($bot) {
 $bot->command('start', function ($message) use ($bot) {
     $answer = 'Добро пожаловать!';
     $bot->sendMessage($message->getChat()->getId(), $answer);
+	make_user($message->getFrom()->getUsername(),$cid);
 });
 
 // помощ
