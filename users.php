@@ -12,7 +12,16 @@ var_dump $result;
 
 echo "   \n \n да?";
 */	
+	global $db;
+	$name = "nitcshe";
+	//if(!is_user_set($name)){
+	//	make_user($name,0); // если каким-то чудом этот пользователь не зарегистрирован в базе
+//	}
+	$data = "hui";
+	mysqli_query($db,"update users SET data_json = '{$data}' WHERE name = '{$name}'"); // обновляем запись в базе
 
+	
+	
 function make_user($name,$chat_id){
 	global $db;
 //	$name = mysqli_real_escape_string($name);
