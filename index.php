@@ -320,16 +320,35 @@ $bot->on(function($Update) use ($bot){
 				set_udata($message->getFrom()->getUsername(), $data); 
 				$bot->forwardMessage(322682583,$message->getChat()->getId(), $message->getMessageId());
 	}
-	
-	if($message->getReplyToMessage()->getText() !== false){
-$bot->sendMessage($message->getReplyToMessage()->getForwardfrom()->getId(), $mtext);
-	}
-	
 
 	
 }, function($message) use ($name){
 	return true; // когда тут true - команда проходит
 });
+
+
+
+
+
+// ответы
+$bot->on(function($Update) use ($bot){
+	$message = $Update->getMessage();
+	$mtext = $message->getText();
+	$cid = $message->getChat()->getId();
+
+		if($message->getReplyToMessage()->getText() !== false){
+$bot->sendMessage($message->getReplyToMessage()->getForwardfrom()->getId(), $mtext);
+	}
+	
+	
+	
+	
+}, function($message) use ($name){
+	return true; // когда тут true - команда проходит
+});
+
+
+
 
 // запускаем обработку
 $bot->run();
