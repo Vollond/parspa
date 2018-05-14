@@ -309,7 +309,7 @@ $bot->on(function($Update) use ($bot){
 		$obrsv1 = $data["obrsv1"];
 	}
 	
-	if(mb_stripos($mtext,"Обратная связь") !== false){
+	if(mb_stripos($mtext,"Задать вопрос") !== false){
 		// по команде /dbact запускаем цепочку
 		$data["obrsv1"] = "on";
 		set_udata($message->getFrom()->getUsername(), $data); 
