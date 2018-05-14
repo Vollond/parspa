@@ -46,7 +46,7 @@ if(!file_exists("registered.trigger")){
 $bot->command('ping', function ($message) use ($bot) {
 	$bot->sendMessage($message->getChat()->getId(), 'pong!');
 	$bot->sendMessage($message->getChat()->getId(), $message->getReply_to_message()->getChat()->getId());
-
+	$bot->sendMessage($message->getChat()->getId(), 'pong2!');
 });
 		
 
