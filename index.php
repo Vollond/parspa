@@ -180,17 +180,16 @@ $bot->on(function($Update) use ($bot){
 	$mtext = $message->getText();
 	$cid = $message->getChat()->getId();
 	
-	if(is_user_set($message->getFrom()->getUsername()) == false){
-		make_user($message->getFrom()->getUsername(),$cid);
-	}
+	make_user($message->getFrom()->getUsername(),$cid);
 	
-	/*// сохранение тестовых данных
+	
+	// сохранение тестовых данных
 	$data = array( "prevmsg" => $mtext );
 	set_udata($message->getFrom()->getUsername(), $data);
 	
 	// тест получения данных
 	$data = get_udata($message->getFrom()->getUsername());
-	$bot->sendMessage($message->getChat()->getId(), json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));*/
+	$bot->sendMessage($message->getChat()->getId(), json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 	
 	
 	$data = get_udata($message->getFrom()->getUsername()); // получаем массив данных
