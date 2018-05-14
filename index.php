@@ -305,10 +305,14 @@ $bot->on(function($Update) use ($bot){
 		$obrsv1 = $data["obrsv1"];
 	}
 	
+	if(mb_stripos($mtext,"123") !== false){
+		$bot->sendMessage($message->getChat()->getId(), $message->getReply_to_message());
+
+	}
 	
-	/*if($message->getReply_to_message() !== false){
+	if($message->getReply_to_message() !== false){
 $bot->sendMessage($message->getReply_to_message()->getChat()->getId(), $mtext);
-	}*/
+	}
 	
 if(mb_stripos($mtext,"Обратная связь") !== false){
 		// по команде /dbact запускаем цепочку
