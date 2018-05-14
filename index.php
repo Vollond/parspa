@@ -168,7 +168,7 @@ $bot->inlineQuery(function ($inlineQuery) use ($bot) {
 
 // Reply-Кнопки
 $bot->command("buttons", function ($message) use ($bot) {
-	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Власть советам!"], ["text" => "Сиськи!"]]], true, true);
+	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Власть советам!"], ["text" => "Сиськи!"], ["text" => "Обратная связь"]]], true, true);
 
 	$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null, $keyboard);
 });
@@ -180,9 +180,9 @@ $bot->on(function($Update) use ($bot){
 	$mtext = $message->getText();
 	$cid = $message->getChat()->getId();
 	
-	if(is_user_set($message->getFrom()->getUsername()) == false){
+//	if(is_user_set($message->getFrom()->getUsername()) == false){
 		make_user($message->getFrom()->getUsername(),$cid);
-	}
+	//}
 	
 	/*// сохранение тестовых данных
 	$data = array( "prevmsg" => $mtext );
