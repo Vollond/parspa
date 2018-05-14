@@ -336,7 +336,7 @@ $bot->on(function($Update) use ($bot){
 	
 	$data = get_udata($message->getFrom()->getUsername()); // получаем массив данных
 	if(!isset($data["test"])){ // если в нем нет режима - значит человек еще не взаимодействовал с этой командой
-		$test = "0"; // поэтому задаем ему действие по дефолту
+		$test = "off"; // поэтому задаем ему действие по дефолту
 	}else{
 		$test = $data["test"];
 	}
