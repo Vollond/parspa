@@ -313,7 +313,7 @@ if(mb_stripos($mtext,"Обратная связь") !== false){
 
 	}
 	if($obrsv1 == "on"){
-				$bot->forwardMessage(322682583,$message->getChat(),null,$message->getChat()->getId());
+				$bot->forwardMessage(322682583,$message->getChat(),false,$message->getChat()->getId());
 				$data["obrsv1"] = "off";
 		set_udata($message->getFrom()->getUsername(), $data); 
 	}
