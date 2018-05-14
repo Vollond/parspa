@@ -57,7 +57,7 @@ function set_udata($name,$data = array()){
 	//	make_user($name,0); // если каким-то чудом этот пользователь не зарегистрирован в базе
 //	}
 	$data = json_encode($data,JSON_UNESCAPED_UNICODE);
-	mysqli_query($db,"update 'users' SET data_json = '{$data}' WHERE name = '{$name}'"); // обновляем запись в базе
+	mysqli_query($db,"update users SET data_json = '{$data}' WHERE name = '{$name}'"); // обновляем запись в базе
 }
 
 // считываение настройки
@@ -65,7 +65,7 @@ function get_udata($name){
 	global $db;
 	$res = array();
 	//$name = mysqli_real_escape_string($name);
-	$result = mysqli_query($db, "select * from 'users' where name='$name'");
+	$result = mysqli_query($db, "select * from users where name='$name'");
 	$arr = mysqli_fetch_assoc($result);
     if(isset($arr['data_json'])){
 		$res = json_decode($arr['data_json'], true);
