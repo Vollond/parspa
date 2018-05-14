@@ -300,19 +300,19 @@ $bot->on(function($Update) use ($bot){
 	
 	$data = get_udata($message->getFrom()->getUsername()); // получаем массив данных
 	if(!isset($data["sv"])){ // если в нем нет режима - значит человек еще не взаимодействовал с этой командой
-		$mode = "obrsv"; // поэтому задаем ему действие по дефолту
+		$sv = "obrsv"; // поэтому задаем ему действие по дефолту
 	}else{
-		$mode = $data["sv"];
+		$sv = $data["sv"];
 	}
 	
 if(mb_stripos($mtext,"Обратная связь") !== false){
 		// по команде /dbact запускаем цепочку
-		if($mode == "obrsv"){
+		if($sv == "obrsv"){
 		$bot->sendMessage($message->getChat()->getId(), "Напишите свой вопрос и вам ответят в ближайшее время");
 			$data["sv"] = "obrsv2";
 			}
 	}
-	if($mode == "obrsv2"){
+	if($sv == "obrsv2"){
 				$bot->sendMessage(322682583, $mtext);
 	}
 	
