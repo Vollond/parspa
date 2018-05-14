@@ -204,7 +204,7 @@ $bot->on(function($Update) use ($bot){
 		if($mode == "name"){
 			$bot->sendMessage($message->getChat()->getId(), "Добрый день, укажите, пожалуйста, ваше имя");
 			$data["mode"] = "aftername";
-	//		set_udata($message->getFrom()->getUsername(), $data); // сохраняем изменения
+			set_udata($message->getFrom()->getUsername(), $data); // сохраняем изменения
 		}
 		
 	}
@@ -213,13 +213,13 @@ $bot->on(function($Update) use ($bot){
 		$data["name"] = $message->getText(); // очевидно, что после запроса имени пользователь отправит следюущей командой свое имя, то есть оно будет в тексте сообщения.
 		$bot->sendMessage($message->getChat()->getId(), "Добрый день, укажите ваш сайт");
 		$data["mode"] = "website";
-	//	set_udata($message->getFrom()->getUsername(), $data); // сохраняем изменения
+		set_udata($message->getFrom()->getUsername(), $data); // сохраняем изменения
 	}
 	if($mode == "website"){
 		$data["website"] = $message->getText(); // очевидно, что после запроса сайта пользователь отправит следюущей командой свой сайт, то есть адрес будет в тексте сообщения.
 		$bot->sendMessage($message->getChat()->getId(), "спасибо.");
 		$data["mode"] = "done";
-	//	set_udata($message->getFrom()->getUsername(), $data); // сохраняем изменения
+		set_udata($message->getFrom()->getUsername(), $data); // сохраняем изменения
 	}
 	
 	if($mode == "done"){
