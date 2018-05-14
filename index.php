@@ -180,7 +180,7 @@ $bot->on(function($Update) use ($bot){
 	$mtext = $message->getText();
 	$cid = $message->getChat()->getId();
 	
-	make_user($message->getFrom()->getUsername(),$cid);
+	//make_user($message->getFrom()->getUsername(),$cid);
 	
 	
 /*	// сохранение тестовых данных
