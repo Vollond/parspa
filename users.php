@@ -20,7 +20,7 @@ require_once("db_connect.php");
 	//	make_user($name,0); // если каким-то чудом этот пользователь не зарегистрирован в базе
 //	}
 	$data = "hui";
-	mysqli_query($db,"update 'users' SET data_json = '{$data}' WHERE name = '{$name}'"); // обновляем запись в базе
+	mysqli_query($db,"update users SET data_json = '{$data}' WHERE name = '{$name}'"); // обновляем запись в базе
 echo "   \n \n да?";
 	
 	
