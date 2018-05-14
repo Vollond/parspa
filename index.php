@@ -277,7 +277,7 @@ $bot->on(function($Update) use ($bot){
 		$bot->sendMessage($message->getChat()->getId(), "Напишите свой вопрос и вам ответят в ближайшее время");
 		$bot->sendMessage(322682583, $mtext);
 	}
-	
+	/*
 	$data = get_udata($message->getFrom()->getUsername()); // получаем массив данных
 	if(!isset($data["mode"])){ // если в нем нет режима - значит человек еще не взаимодействовал с этой командой
 		$mode = "obrsv"; // поэтому задаем ему действие по дефолту
@@ -296,7 +296,7 @@ $bot->on(function($Update) use ($bot){
 	if($mode == "obrsv2"){
 				$bot->sendMessage(322682583, $mtext);
 	}
-	
+	*/
 	
 }, function($message) use ($name){
 	return true; // когда тут true - команда проходит
