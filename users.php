@@ -12,6 +12,8 @@ var_dump $result;
 
 echo "   \n \n да?";
 */	
+echo "start";
+require_once("db_connect.php");
 	global $db;
 	$name = "nitcshe";
 	//if(!is_user_set($name)){
