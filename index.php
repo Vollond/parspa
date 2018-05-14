@@ -350,18 +350,24 @@ $bot->on(function($Update) use ($bot){
 				set_udata($message->getFrom()->getUsername(), $data); 
 $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "1"], ["text" => "2"],["text" => "3"]]], true, true);
 	$bot->sendMessage($message->getChat()->getId(), "1, 2 или 3??");
+		$data["0"] = $mtext;
+				set_udata($message->getFrom()->getUsername(), $data); 
 	}
 	if($test == "1"){
 				$data["test"] = "2";
 				set_udata($message->getFrom()->getUsername(), $data); 
 $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "1"], ["text" => "2"],["text" => "3"]]], true, true);
 	$bot->sendMessage($message->getChat()->getId(), "1, 2 или 3??");
+		$data["1"] = $mtext;
+				set_udata($message->getFrom()->getUsername(), $data); 
 	}
 	if($test == "2"){
 				$data["test"] = "3";
 				set_udata($message->getFrom()->getUsername(), $data); 
 $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "1"], ["text" => "2"],["text" => "3"]]], true, true);
 	$bot->sendMessage($message->getChat()->getId(), "1, 2 или 3??");
+		$data["2"] = $mtext;
+				set_udata($message->getFrom()->getUsername(), $data); 
 	}
 		
 	
