@@ -308,15 +308,7 @@ $bot->on(function($Update) use ($bot){
 		$obrsv1 = $data["obrsv1"];
 	}
 	
-	if(mb_stripos($mtext,"123") !== false){
-		$bot->sendMessage($message->getChat()->getId(), $message->getReplyToMessage()->getText());
-	}
-	
-	if($message->getReplyToMessage()->getText() !== false){
-$bot->sendMessage($message->getReplyToMessage()->getForwardfrom()->getId(), $mtext);
-	}
-	
-if(mb_stripos($mtext,"Обратная связь") !== false){
+	if(mb_stripos($mtext,"Обратная связь") !== false){
 		// по команде /dbact запускаем цепочку
 		$data["obrsv1"] = "on";
 		set_udata($message->getFrom()->getUsername(), $data); 
@@ -328,6 +320,12 @@ if(mb_stripos($mtext,"Обратная связь") !== false){
 				set_udata($message->getFrom()->getUsername(), $data); 
 				$bot->forwardMessage(322682583,$message->getChat()->getId(), $message->getMessageId());
 	}
+	
+	if($message->getReplyToMessage()->getText() !== false){
+$bot->sendMessage($message->getReplyToMessage()->getForwardfrom()->getId(), $mtext);
+	}
+	
+
 	
 }, function($message) use ($name){
 	return true; // когда тут true - команда проходит
