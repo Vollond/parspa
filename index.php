@@ -299,21 +299,23 @@ $bot->on(function($Update) use ($bot){
 	}
 	
 	$data = get_udata($message->getFrom()->getUsername()); // получаем массив данных
-	if(!isset($data["sv"])){ // если в нем нет режима - значит человек еще не взаимодействовал с этой командой
-		$sv = "obrsv"; // поэтому задаем ему действие по дефолту
+	if(!isset($data["obrsv"])){ // если в нем нет режима - значит человек еще не взаимодействовал с этой командой
+		$obrsv = "off"; // поэтому задаем ему действие по дефолту
 	}else{
-		$sv = $data["sv"];
+		$obrsv = $data["obrsv"];
 	}
 	
 if(mb_stripos($mtext,"Обратная связь") !== false){
 		// по команде /dbact запускаем цепочку
-		$data["sv"] = "obrsv";
+		$data["obrsv"] = "on";
 		set_udata($message->getFrom()->getUsername(), $data); 
 		$bot->sendMessage($message->getChat()->getId(), "Напишите свой вопрос и вам ответят в ближайшее время");
 
 	}
-	if($sv == "obrsv"){
+	if($obrsv == "on"){
 				$bot->sendMessage(322682583, $mtext);
+				$data["obrsv"] = "off";
+		set_udata($message->getFrom()->getUsername(), $data); 
 	}
 	
 }, function($message) use ($name){
