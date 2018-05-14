@@ -299,10 +299,10 @@ $bot->on(function($Update) use ($bot){
 	}
 	
 	$data = get_udata($message->getFrom()->getUsername()); // получаем массив данных
-	if(!isset($data["obrsv"])){ // если в нем нет режима - значит человек еще не взаимодействовал с этой командой
-		$obrsv = "off"; // поэтому задаем ему действие по дефолту
+	if(!isset($data["obrsv1"])){ // если в нем нет режима - значит человек еще не взаимодействовал с этой командой
+		$obrsv1 = "off"; // поэтому задаем ему действие по дефолту
 	}else{
-		$obrsv = $data["obrsv"];
+		$obrsv1 = $data["obrsv1"];
 	}
 	
 if(mb_stripos($mtext,"Обратная связь") !== false){
@@ -312,9 +312,9 @@ if(mb_stripos($mtext,"Обратная связь") !== false){
 		$bot->sendMessage($message->getChat()->getId(), "Напишите свой вопрос и вам ответят в ближайшее время");
 
 	}
-	if($obrsv == "on"){
+	if($obrsv1 == "on"){
 				$bot->sendMessage(322682583, $mtext);
-				$data["obrsv"] = "off";
+				$data["obrsv1"] = "off";
 		set_udata($message->getFrom()->getUsername(), $data); 
 	}
 	
