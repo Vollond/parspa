@@ -343,7 +343,6 @@ $bot->on(function($Update) use ($bot){
 	
 	if(mb_stripos($mtext,"Пройти тест") !== false){
 		$data["test"] = "0";
-		$bot->sendMessage($message->getChat()->getId(), "Отвечайте!");
 $keyboard2 = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "1"], ["text" => "2"],["text" => "3"]]], true, true);
 $bot->sendMessage($message->getChat()->getId(), "Отвечайте!", false, null,null, $keyboard2);
 	$bot->sendMessage($message->getChat()->getId(), "1, 2 или 3??");
@@ -353,6 +352,8 @@ $bot->sendMessage($message->getChat()->getId(), "Отвечайте!", false, nu
 	if($test == "0"){
 				$data["test"] = "1";
 				set_udata($message->getFrom()->getUsername(), $data); 
+				$keyboard2 = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "1"], ["text" => "2"],["text" => "3"]]], true, true);
+
 				$bot->sendMessage($message->getChat()->getId(), "Отвечайте!", false, null,null, $keyboard2);
 	$bot->sendMessage($message->getChat()->getId(), "1, 2 или 3??");
 		$data["1"] = $mtext;
