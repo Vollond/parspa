@@ -192,13 +192,13 @@ $bot->on(function($Update) use ($bot){
 	$bot->sendMessage($message->getChat()->getId(), json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
 	
 	
-	$data = get_udata($message->getFrom()->getUsername()); // получаем массив данных
+	/*$data = get_udata($message->getFrom()->getUsername()); // получаем массив данных
 	if(!isset($data["mode"])){ // если в нем нет режима - значит человек еще не взаимодействовал с этой командой
 		$mode = "name"; // поэтому задаем ему действие по дефолту
 	}else{
 		$mode = $data["mode"];
-	}
-	
+	}*/
+	$mode = "name"; 
 	if($mtext == "/dbact"){
 		// по команде /dbact запускаем цепочку
 		if($mode == "name"){
