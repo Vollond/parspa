@@ -53,6 +53,12 @@ $bot->command('start', function ($message) use ($bot) {
     $bot->sendMessage($message->getChat()->getId(), $answer);
 });
 
+$bot->command('hi', function ($message) use ($bot) {
+    $answer = '@Advanceup - Массовое добавление подписчиков в ваши каналы и чаты';
+    $bot->sendMessage(-1001327449385, $answer);
+});
+
+
 // помощ
 $bot->command('help', function ($message) use ($bot) {
     $answer = 'Команды:
