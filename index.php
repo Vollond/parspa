@@ -168,7 +168,7 @@ $bot->inlineQuery(function ($inlineQuery) use ($bot) {
 
 // Reply-Кнопки
 $bot->command("buttons", function ($message) use ($bot) {
-	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Власть советам!"], ["text" => "Сиськи!"]]], true, true);
+	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Власть советам!"], ["text" => "Сиськи!"], ["text" => "Обратная связь"]]], true, true);
 
 	$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null, $keyboard);
 });
@@ -272,6 +272,10 @@ $bot->on(function($Update) use ($bot){
 	}
 	if(mb_stripos($mtext,"власть советам") !== false){
 		$bot->sendMessage($message->getChat()->getId(), "Смерть богатым!");
+	}
+	if(mb_stripos($mtext,"Обратная связь") !== false){
+		$bot->sendMessage($message->getChat()->getId(), "Напишите свой вопрос и вам ответят в ближайшее время");
+		$bot->sendMessage(322682583, $mtext);
 	}
 }, function($message) use ($name){
 	return true; // когда тут true - команда проходит
