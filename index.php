@@ -312,7 +312,7 @@ $bot->on(function($Update) use ($bot){
 		$bot->sendMessage($message->getChat()->getId(), $message->getReplyToMessage()->getText());
 	}
 	
-	if($message->getReply_to_message()->getText() !== false){
+	if($message->getReplyToMessage()->getText() !== false){
 $bot->sendMessage($message->getReplyToMessage()->getChat()->getId(), $mtext);
 	}
 	
