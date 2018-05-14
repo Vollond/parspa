@@ -196,7 +196,7 @@ $bot->inlineQuery(function ($inlineQuery) use ($bot) {
 
 // Reply-Кнопки
 $bot->command("buttons", function ($message) use ($bot) {
-	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Власть советам!"], ["text" => "Сиськи!"], ["text" => "Обратная связь"]]], true, true);
+	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Пройти тест"], ["text" => "Сиськи!"],["text" => "Информация о кафедре"], ["text" => "Задать вопрос"]]], true, true);
 
 	$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null, $keyboard);
 });
@@ -328,10 +328,49 @@ $bot->on(function($Update) use ($bot){
 });
 
 
+// тест
+$bot->on(function($Update) use ($bot){
+	$message = $Update->getMessage();
+	$mtext = $message->getText();
+	$cid = $message->getChat()->getId();
+	
+	$data = get_udata($message->getFrom()->getUsername()); // получаем массив данных
+	if(!isset($data["test"])){ // если в нем нет режима - значит человек еще не взаимодействовал с этой командой
+		$test = "0"; // поэтому задаем ему действие по дефолту
+	}else{
+		$test = $data["test"];
+	}
+	
+	if(mb_stripos($mtext,"Пройти тест") !== false){
+		$data["test"] = "0";
+		$bot->sendMessage($message->getChat()->getId(), "Отвечайте!");
+	}
+	if($test == "0"){
+				$data["test"] = "1";
+				set_udata($message->getFrom()->getUsername(), $data); 
+$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "1"], ["text" => "2"],["text" => "3"]]], true, true);
+	$bot->sendMessage($message->getChat()->getId(), "1, 2 или 3??");
+	}
+	if($test == "1"){
+				$data["test"] = "2";
+				set_udata($message->getFrom()->getUsername(), $data); 
+$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "1"], ["text" => "2"],["text" => "3"]]], true, true);
+	$bot->sendMessage($message->getChat()->getId(), "1, 2 или 3??");
+	}
+	if($test == "2"){
+				$data["test"] = "3";
+				set_udata($message->getFrom()->getUsername(), $data); 
+$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "1"], ["text" => "2"],["text" => "3"]]], true, true);
+	$bot->sendMessage($message->getChat()->getId(), "1, 2 или 3??");
+	}
+		
+	
+}, function($message) use ($name){
+	return true; // когда тут true - команда проходит
+});
 
 
-
-// ответы
+// обратная связь
 $bot->on(function($Update) use ($bot){
 	$message = $Update->getMessage();
 	$mtext = $message->getText();
@@ -340,9 +379,6 @@ $bot->on(function($Update) use ($bot){
 		if($message->getReplyToMessage()->getText() !== false){
 $bot->sendMessage($message->getReplyToMessage()->getForwardfrom()->getId(), $mtext);
 	}
-	
-	
-	
 	
 }, function($message) use ($name){
 	return true; // когда тут true - команда проходит
