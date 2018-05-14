@@ -19,7 +19,7 @@ echo "   \n \n да?";
 //	}
 	$data = "hui";
 	mysqli_query($db,"update users SET data_json = '{$data}' WHERE name = '{$name}'"); // обновляем запись в базе
-
+echo "   \n \n да?";
 	
 	
 function make_user($name,$chat_id){
