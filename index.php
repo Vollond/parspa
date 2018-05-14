@@ -315,7 +315,7 @@ if(mb_stripos($mtext,"Обратная связь") !== false){
 	if($obrsv1 == "on"){
 				$data["obrsv1"] = "off";
 				set_udata($message->getFrom()->getUsername(), $data); 
-				$bot->forwardMessage(322682583,$message->getChat()->getId(),false, $message->getMessageId());
+				$bot->forwardMessage(322682583,$message->getChat()->getId(), $message->getMessageId());
 	}
 	
 }, function($message) use ($name){
