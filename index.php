@@ -309,8 +309,7 @@ $bot->on(function($Update) use ($bot){
 	}
 	
 	if(mb_stripos($mtext,"123") !== false){
-		$bot->sendMessage($message->getChat()->getId(), $message->getReply_to_message());
-
+		$bot->sendMessage($message->getChat()->getId(), $message->getReply_to_message()->getText());
 	}
 	
 	if($message->getReply_to_message() !== false){
