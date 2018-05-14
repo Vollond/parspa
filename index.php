@@ -224,6 +224,7 @@ $bot->on(function($Update) use ($bot){
 	}
 
 	if($mtext == "/dbact"){
+$bot->sendMessage($message->getChat()->getId(), "старт");
 		// по команде /dbact запускаем цепочку
 		if($mode == "name"){
 			$bot->sendMessage($message->getChat()->getId(), "Добрый день, укажите, пожалуйста, ваше имя");
