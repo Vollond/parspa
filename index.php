@@ -313,7 +313,7 @@ $bot->on(function($Update) use ($bot){
 	}
 	
 	if($message->getReplyToMessage()->getText() !== false){
-$bot->sendMessage($message->getReplyToMessage()->getChat()->getId(), $mtext);
+$bot->sendMessage($message->getReplyToMessage()->getForwardfrom()->getId(), $mtext);
 	}
 	
 if(mb_stripos($mtext,"Обратная связь") !== false){
