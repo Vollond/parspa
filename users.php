@@ -41,10 +41,10 @@ function is_user_set($name){
 // задание настройки
 function set_udata($name,$data = array()){
 	global $db;
-	$name = mysqli_real_escape_string($name);
-	if(!is_user_set($name)){
-		make_user($name,0); // если каким-то чудом этот пользователь не зарегистрирован в базе
-	}
+	//$name = mysqli_real_escape_string($name);
+	//if(!is_user_set($name)){
+	//	make_user($name,0); // если каким-то чудом этот пользователь не зарегистрирован в базе
+//	}
 	$data = json_encode($data,JSON_UNESCAPED_UNICODE);
 	mysqli_query("update `users` SET data_json = '{$data}' WHERE name = '{$name}'",$db); // обновляем запись в базе
 }
