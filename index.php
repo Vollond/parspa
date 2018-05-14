@@ -53,13 +53,6 @@ $bot->command('start', function ($message) use ($bot) {
     $bot->sendMessage($message->getChat()->getId(), $answer);
 });
 
-$bot->command('hi', function ($message) use ($bot) {
-    $answer = '@Advanceup - Массовое добавление подписчиков в ваши каналы и чаты';
-    $bot->sendMessage(-1001327449385, $answer);
-	$bot->sendMessage($message->getChat()->getId(), $answer);
-});
-
-
 // помощ
 $bot->command('help', function ($message) use ($bot) {
     $answer = 'Команды:
@@ -180,29 +173,6 @@ $bot->command("buttons", function ($message) use ($bot) {
 	$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null, $keyboard);
 });
 
-$bot->command('reg', function ($message) use ($bot) {
-		$cid = $message->getChat()->getId();
-
-    $answer = 'По
-	пробуем...';
-    $bot->sendMessage($message->getChat()->getId(), $answer);
-	//$message = $Update->getMessage();
-	make_user($message->getFrom()->getUsername(),$cid);
-	$bot->sendMessage($message->getChat()->getId(), "вышло?");
-});
-
-$bot->command('reg2', function ($message) use ($bot) {
-    $bot->sendMessage($message->getChat()->getId(), 'lasd&');
-	$cid = $message->getChat()->getId();
-
-	if(is_user_set($message->getFrom()->getUsername()) == false){
-		make_user($message->getFrom()->getUsername(),$cid);
-	}
-	else {$bot->sendMessage($message->getChat()->getId(), "уже есть");}
-	$bot->sendMessage($message->getChat()->getId(), "вышло?");
-
-});
-
 
 // регистрация юзера
 $bot->on(function($Update) use ($bot){
@@ -210,9 +180,9 @@ $bot->on(function($Update) use ($bot){
 	$mtext = $message->getText();
 	$cid = $message->getChat()->getId();
 	
-	//if(is_user_set($message->getFrom()->getUsername()) == false){
+	if(is_user_set($message->getFrom()->getUsername()) == false){
 		make_user($message->getFrom()->getUsername(),$cid);
-	//}
+	}
 	
 	/*// сохранение тестовых данных
 	$data = array( "prevmsg" => $mtext );
@@ -287,7 +257,6 @@ $bot->on(function($Update) use ($bot){
 	$cid = $message->getChat()->getId();
 	
 	// array of https://github.com/TelegramBot/Api/blob/master/src/Types/PhotoSize.php
-
 	$photos = $message->getPhoto();
 	if(!empty($photos)) foreach($photos as $ph){
 		$fileId = $ph->getFileId();
@@ -295,11 +264,10 @@ $bot->on(function($Update) use ($bot){
 		file_put_contents("file.jpg",$data);
 		$bot->sendMessage($message->getChat()->getId(), "Файл загружен");
 	}
-
+	
 	if(mb_stripos($mtext,"Сиськи") !== false){
-		$answer = 'Добро пожаловать!';
-		$bot->sendMessage($message->getChat()->getId(), $answer);
 		$pic = "http://aftamat4ik.ru/wp-content/uploads/2017/05/14277366494961.jpg";
+
 		$bot->sendPhoto($message->getChat()->getId(), $pic);
 	}
 	if(mb_stripos($mtext,"власть советам") !== false){
