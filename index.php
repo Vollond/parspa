@@ -306,9 +306,9 @@ $bot->on(function($Update) use ($bot){
 	}
 	
 	
-	if($message->getReply_to_message() !== false){
+	/*if($message->getReply_to_message() !== false){
 $bot->sendMessage($message->getReply_to_message()->getChat()->getId(), $mtext);
-	}
+	}*/
 	
 if(mb_stripos($mtext,"Обратная связь") !== false){
 		// по команде /dbact запускаем цепочку
