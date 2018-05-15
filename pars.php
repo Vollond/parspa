@@ -20,8 +20,8 @@ foreach($links as $link){
 
 
 	$tmp[] = array(
-		//"text" => $link->text(),
-		"url"  => $link->attr("href"),
+		"text" => $link->text(),
+	//	"url"  => $link->attr("href"),
 		"img"  => $link->attr("src")
 	);
 }
@@ -32,8 +32,8 @@ phpQuery::unloadDocuments();
 <ul>
 	<?php foreach($tmp as $value): ?>
 	<li>
-		<a href="<?php echo($value["url"]); ?>" target="_blank">
-			<?php echo($value["img"]); ?>
+		<a href="<?php echo($value["img"]); ?>" target="_blank">
+			<?php echo($value["text"]); ?>
 		</a>
 	</li>
 	<?php endforeach; ?>
