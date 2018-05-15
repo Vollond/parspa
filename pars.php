@@ -21,7 +21,7 @@ foreach($links as $link){
 
 	$tmp[] = array(
 		//"text" => $link->text(),
-		"url"  => $link->attr("href")
+		"url"  => $link->attr("href"),
 		"img"  => $link->attr("src")
 	);
 }
