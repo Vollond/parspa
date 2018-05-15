@@ -375,6 +375,7 @@ $bot->sendMessage($message->getChat()->getId(), "3Груша? 1, 2 или 3??", 
 		$data["3"] = $mtext;
 				set_udata($message->getFrom()->getUsername(), $data); 
 	}
+	//1+2-3+4-5/ if>5, вы дизайнер.
 		
 	
 }, function($message) use ($name){
