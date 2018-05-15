@@ -22,7 +22,7 @@ foreach($links as $link){
 	$tmp[] = array(
 		"text" => $link->text(),
 		"url"  => $link->attr("href")
-		"img"  => $link->attr("src")
+//		"img"  => $link->attr("src")
 	);
 }
 
@@ -34,7 +34,6 @@ phpQuery::unloadDocuments();
 	<li>
 		<a href="<?php echo($value["url"]); ?>" target="_blank">
 			<?php echo($value["text"]); ?>
-			<?php echo($value["img"]); ?>
 		</a>
 	</li>
 	<?php endforeach; ?>
