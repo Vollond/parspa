@@ -22,7 +22,7 @@ foreach($links as $link){
 	$tmp[] = array(
 		"text" => $link->text(),
 		"url"  => $link->attr("href")
-		"img"  => $img->attr("src")
+		"img"  => $link->attr("src")
 	);
 }
 
