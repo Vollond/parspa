@@ -7,7 +7,7 @@
 header('Content-Type: text/html; charset=utf-8');
 require('PQ/phpQuery/phpQuery.php');
 
-$html = file_get_contents("https://yandex.by/");
+$html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 
 phpQuery::newDocument($html);
 
