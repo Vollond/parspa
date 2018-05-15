@@ -35,9 +35,6 @@ phpQuery::unloadDocuments();
 		<a href="<?php echo($value["url"]); ?>" target="_blank">
 			<?php echo($value["text"]); ?>
 		</a>
-		<a href="<?php echo($value["img"]); ?>" target="_blank">
-			<?php echo($value["img"]); ?>
-		</a>
 	</li>
 	<?php endforeach; ?>
 </ul>
