@@ -28,7 +28,7 @@ foreach($links as $link){
 
 phpQuery::unloadDocuments();
 ?>
-
+<script async src="https://telegram.org/js/telegram-widget.js?4" data-telegram-post="Serious_catalog/674" data-width="100%"></script>
 <ul>
 	<?php foreach($tmp as $value): ?>
 	<li>
