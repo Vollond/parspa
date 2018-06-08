@@ -39,13 +39,13 @@ phpQuery::unloadDocuments();
 		$txt = $result3[0][0];
 		$img = $result[0][0];
 		$url = $result2[0][0];
-		$txt = mb_substr( $result3[0][0], 3);
-		$img = mb_substr( $result[0][0], 5);
-		$url = mb_substr( $result2[0][0], 6);
-		
-			?>
+		?>
 	
 	<?php endforeach; ?>
 <?php 	
+		$txt = mb_substr( $txt, 3);
+		$img = mb_substr( $img, 5);
+		$url = mb_substr( $url, 6);
+		
 		echo"$txt \n $img \n  $url ";
 ?>
