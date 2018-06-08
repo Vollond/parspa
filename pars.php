@@ -36,7 +36,7 @@ foreach($tmp as $value):
 preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $result);
 preg_match_all('/href="[^>]+">.+?/',$value["url"], $result2);
 
-print_r $value["url"];
+print_r ($value["url"]);
 print_r ($result2[0]);
  endforeach; 
  
