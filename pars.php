@@ -27,38 +27,34 @@ foreach($links as $link){
 	);
 }
 
-
+/*
 foreach($tmp as $value): 
 preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $result);
  endforeach; 
  
  foreach($tmp as $value): 
 preg_match_all('/(href)=("|\')[^"\'>]+/',$value["text2"], $resultt);
-print_r ($resultt);
+//print_r ($resultt);
 endforeach; 
- 
+ */
 phpQuery::unloadDocuments();
 ?>
 
 	<?php foreach($tmp as $value): ?>
 	
 		<?php 
+		preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $result);
 		preg_match_all('/(href)=("|\')[^"\'>]+/',$value["text2"], $result2);
-		//print_r($result2);
-		echo"00\n";
-	//	print_r($value["url"]);
-		echo"1\n";
-		echo($value["text2"]);
-		echo"2\n";  
-		echo($result[0][0]);
-		echo"\n";
-		echo($result2[0][0]);
+
+//		echo($value["text2"]);
+//		echo($result[0][0]);
+//		echo($result2[0][0]);
 		
 		echo"\n\n\n";
 		$txt = $value["text2"];
 		$img = $result[0][0];
 		$url = $result2[0][0];
-		echo"$txt \n $img \n  $url ";
+//		echo"$txt \n $img \n  $url ";
 			?>
 	
 	<?php endforeach; ?>
