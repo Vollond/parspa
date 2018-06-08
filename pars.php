@@ -41,8 +41,6 @@ phpQuery::unloadDocuments();
 			  echo($value["text2"]);
 			  echo($value["img"]);
 			?>
-		</a>
-
 	</li>
 	<?php endforeach; ?>
 </ul>
