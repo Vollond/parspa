@@ -6,6 +6,7 @@
  */
 header('Content-Type: text/html; charset=utf-8');
 require('PQ/phpQuery/phpQuery.php');
+require_once("db_connect.php");
 
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 
@@ -42,32 +43,37 @@ foreach($links as $link){
 }
 
 phpQuery::unloadDocuments();
-?>
 
-<?php 
 foreach($art as $value): 
 echo ($value["num"]);
 echo "\n";
 endforeach;
-?>
 
 
-	<?php foreach($tmp as $value): ?>
+
+foreach($tmp as $value): 
 	
-		<?php 
+	
 		preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $result);
 		preg_match_all('/(href)=("|\')[^"\'>]+/',$value["text2"], $result2);
 		preg_match_all('/(<p>)[^<]+/',$value["text2"], $result3);
 		$txt = $result3[0][0];
 		$img = $result[0][0];
 		$url = $result2[0][0];
-		?>
-	
-	<?php endforeach; ?>
-<?php 	
+		
+	 endforeach; 
+
 		$txt = substr( $txt, 3);
 		$img = substr( $img, 5);
 		$url = substr( $url, 6);
 		
 		echo"$txt \n $img \n  $url ";
+
+
+
+function add_post($num){
+	global $db;
+	$query = "insert into posts (num) values('{$num}')";
+	mysqli_query($db,$query) or die("пост не добавлен");
+}
 ?>
