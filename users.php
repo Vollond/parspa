@@ -1,30 +1,19 @@
 <?php
 /** модель работы с пользователями **/
-/*
+
 require_once("db_connect.php");
 global $db;
-$name = "123";
-$result = mysqli_query("select from users where name = '' LIMIT 1",$db);
-echo "$result";
-
-if(mysqli_fetch_array($result) !== false) echo "не фолс";
-var_dump $result;
-
-echo "   \n \n да?";
-*/	
-/*
-echo "start";
-require_once("db_connect.php");
-	global $db;
-	$name = "nitcshe";
-	//if(!is_user_set($name)){
-	//	make_user($name,0); // если каким-то чудом этот пользователь не зарегистрирован в базе
-//	}
-	$data = "hui";
-	mysqli_query($db,"update users SET data_json = '{$data}' WHERE name = '{$name}'"); // обновляем запись в базе
-echo "   \n \n да?";
+$num="111";
+$query = "insert into posts (num) values('{$num}')";
+mysqli_query($db,$query) or die("пост не добавлен");
 	
-	*/
+	
+function add_post($num){
+	global $db;
+	$query = "insert into posts (num) values('{$num}')";
+	mysqli_query($db,$query) or die("пост не добавлен");
+}
+
 function make_user($name,$chat_id){
 	global $db;
 //	$name = mysqli_real_escape_string($name);
