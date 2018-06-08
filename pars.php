@@ -21,20 +21,22 @@ foreach($links as $link){
 
 	$tmp[] = array(
 		"text" => $link->text(),
-	//	"url"  => $link->attr("href"),
+		"url"  => $link->attr("href"),
 		"img"  => $link->attr("src")
 	);
 }
 
 phpQuery::unloadDocuments();
 ?>
-<script async src="https://telegram.org/js/telegram-widget.js?4" data-telegram-post="Serious_catalog/674" data-width="100%"></script>
 <ul>
 	<?php foreach($tmp as $value): ?>
 	<li>
 		<a href="<?php echo($value["img"]); ?>" target="_blank">
 			<?php echo($value["text"]); ?>
 		</a>
+		<?php echo($value["text"]); ?>
+		<?php echo($value["img"]); ?>
+		<?php echo($value["url"]); ?>
 	</li>
 	<?php endforeach; ?>
 </ul>
