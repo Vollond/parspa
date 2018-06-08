@@ -43,10 +43,9 @@ phpQuery::unloadDocuments();
 	
 	<?php endforeach; ?>
 <?php 	
-		mb_internal_encoding("UTF-8");
-		$txt = mb_substr( $txt, 3);
-		$img = mb_substr( $img, 5);
-		$url = mb_substr( $url, 6);
+		$txt = substr( $txt, 3);
+		$img = substr( $img, 5);
+		$url = substr( $url, 6);
 		
 		echo"$txt \n $img \n  $url ";
 ?>
