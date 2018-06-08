@@ -62,3 +62,6 @@ phpQuery::unloadDocuments();
 			?>
 	
 	<?php endforeach; ?>
+<?php 	
+		echo"$txt \n $img \n  $url ";
+?>
