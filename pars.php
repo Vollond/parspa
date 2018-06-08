@@ -44,6 +44,8 @@ phpQuery::unloadDocuments();
 		<?php echo($value["img"]); ?>
 		<?php echo($value["url"]); ?>
 		<?php echo($value["text2"]); ?>
+		<?php echo($value["text"]); ?>
+		<?php echo($value["text"]); ?>
 	</li>
 	<?php endforeach; ?>
 </ul>
