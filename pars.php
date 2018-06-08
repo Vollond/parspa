@@ -17,7 +17,11 @@ $tmp = array();
 foreach($links as $link){
 
 	$link = pq($link);
-
+<?php foreach($tmp as $value):
+<li>
+echo($link);
+	</li>
+ ?>
 
 	$tmp[] = array(
 		"text" => $link->text(),
