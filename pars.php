@@ -12,6 +12,7 @@ $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/"
 phpQuery::newDocument($html);
 
 $links = pq("#post-3372")->find("img");
+ print_r($links);
 $tmp = array();
 
 foreach($links as $link){
