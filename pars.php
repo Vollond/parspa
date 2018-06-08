@@ -20,7 +20,7 @@ foreach($articls as $article){
 $article = pq($article);
 		
 	$art[] = array(
-	"num" => $article->attr("id")
+	"num" => $article
 	);
 }
 
