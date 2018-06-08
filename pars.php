@@ -34,10 +34,10 @@ foreach($links as $link){
 
 foreach($tmp as $value): 
 preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $result);
-preg_match_all('/(img|href)=("|\')[^"\'>]+/i',$value["url"], $result);
+preg_match_all('/(img|href)=("|\')[^"\'>]+/i',$value["url"], $result2);
 
 
-//print_r ($result);
+print_r ($result2);
  endforeach; 
  
 phpQuery::unloadDocuments();
