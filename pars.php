@@ -12,22 +12,19 @@ $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/"
 $pq = phpQuery::newDocument($html);
 
 
-$elem = $pq->find("article")->attr("id");
+$articls = $pq->find("article");
+print_r ($articls);
 
-print_r ($elem);
-/*
-$articls = $html->find("id");
 
 $art = array();
 
 foreach($articls as $article){
 	
 $article = pq($article);
-		
 	$art[] = array(
-	"num" => $article
+	"num" => $article->attr("id")
 	);
-}*/
+}
 
 $links = pq("#post-3358")->find("div");
 
