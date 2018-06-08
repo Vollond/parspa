@@ -11,7 +11,7 @@ $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/"
 
 phpQuery::newDocument($html);
 
-$articls = pq("content")->find("article ");
+$articls = pq("content")->find("article");
 
 $art = array();
 
