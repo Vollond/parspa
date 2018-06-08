@@ -11,7 +11,7 @@ $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/"
 
 phpQuery::newDocument($html);
 
-$links = pq("#post-3372")->find("a");
+$links = pq("#post-3372")->find("div");
 $tmp = array();
 
 foreach($links as $link){
@@ -19,7 +19,7 @@ foreach($links as $link){
 <?php echo "$link"; ?>
  */
 	$link = pq($link);
-<?php print_r($link); ?>
+
 
 
 	$tmp[] = array(
