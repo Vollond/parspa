@@ -47,7 +47,7 @@ phpQuery::unloadDocuments();
 		preg_match_all('/(href)=("|\')[^"\'>]+',$value["url"], $result2);
 		print_r($result2);
 		echo"0\n";
-		print_r($value["url"]);
+	//	print_r($value["url"]);
 		echo"1\n";
 		echo($value["text2"]);
 		echo"2\n";  
