@@ -31,17 +31,9 @@ foreach($links as $link){
 	);
 }
 
-echo($link->attr("href"));
-echo($tmp["text2"]);
-
-print_r($tmp["text2"]);
-echo($tmp["text2"]);
-
-echo($tmp["url"]);
-
 foreach($tmp as $value): 
 preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $result);
-preg_match_all('/href="[^>]+">.+?/',$value["url"], $result2);
+print_r(preg_match_all('/href="[^>]+">.+?/',$value["url"], $result2));
 
 print_r ($value["url"]);
 print_r ($result2[0]);
