@@ -43,6 +43,14 @@ foreach($links as $link){
 phpQuery::unloadDocuments();
 ?>
 
+<?php 
+foreach($art as $value): 
+echo ($value);
+echo "\n";
+endforeach;
+?>
+
+
 	<?php foreach($tmp as $value): ?>
 	
 		<?php 
