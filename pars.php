@@ -33,7 +33,7 @@ foreach($links as $link){
 }
 //$result=
 foreach($tmp as $value): 
-preg_match_all('/("|\')[^"\'>]+/i',$value["img"], $result);
+preg_match_all('/()("|\')[^"\'>]+/i',$value["img"], $result);
 print_r ($result);
 
  
