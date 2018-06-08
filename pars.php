@@ -35,8 +35,7 @@ preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $result);
  foreach($tmp as $value): 
 preg_match_all('/(href)=("|\')[^"\'>]+/',$value["text2"], $resultt);
 print_r ($resultt);
-echo("$resultt");
- endforeach; 
+endforeach; 
  
 phpQuery::unloadDocuments();
 ?>
@@ -52,6 +51,7 @@ phpQuery::unloadDocuments();
 		echo($value["text2"]);
 		echo"2\n";  
 		echo($result[0][0]);
+		echo"\n";
 		echo($result2[0][0]);
 
 			?>
