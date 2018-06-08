@@ -14,7 +14,8 @@ phpQuery::newDocument($html);
 $articls = pq("article")->find("id");
 foreach($articls as $article){
 	$tmp[] = array(
-	"num" => $article->find("id"),
+	"num" => $article->find("id")
+	);
 }
 print_r($article);
 
