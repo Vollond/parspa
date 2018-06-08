@@ -40,10 +40,15 @@ phpQuery::unloadDocuments();
 		<a href="<?php echo($value["url"]); ?>" target="_blank">
 			<?php echo($value["text"]); ?>
 		</a>
-		<?php echo($value["text"]); ?>
-		<?php echo($value["img"]); ?>
-		<?php echo($value["url"]); ?>
-		<?php echo($value["text2"]); ?>
+		<?php 
+		echo($value["text"]);
+		 echo "1\n";
+		 echo($value["img"]);
+		  echo "2\n";
+		 echo($value["url"]); 
+		  echo "3\n";
+		 echo($value["text2"]);
+		 ?>
 	</li>
 	<?php endforeach; ?>
 </ul>
