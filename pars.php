@@ -12,7 +12,7 @@ $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/"
 $pq = phpQuery::newDocument($html);
 
 
-$elem = $pq->find("article");
+$elem = $pq->find("article")->attr("id");
 
 print_r ($elem);
 /*
