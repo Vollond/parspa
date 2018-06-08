@@ -13,7 +13,6 @@ $pq = phpQuery::newDocument($html);
 
 
 $articls = $pq->find("article");
-print_r ($articls);
 
 
 $art = array();
