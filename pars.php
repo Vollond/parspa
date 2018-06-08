@@ -45,13 +45,14 @@ phpQuery::unloadDocuments();
 		<?php 
 		preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $result);
 		preg_match_all('/(href)=("|\')[^"\'>]+/',$value["text2"], $result2);
+		preg_match_all('/(<p>)[^<]+/',$value["text2"], $result3);
 
 //		echo($value["text2"]);
 //		echo($result[0][0]);
 //		echo($result2[0][0]);
 		
 		echo"\n\n\n";
-		$txt = $value["text2"];
+		$txt = $result3[0][0];
 		$img = $result[0][0];
 		$url = $result2[0][0];
 //		echo"$txt \n $img \n  $url ";
