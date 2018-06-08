@@ -13,11 +13,11 @@ phpQuery::newDocument($html);
 
 $articls = pq("article")->find("id");
 foreach($articls as $article){
-	$tmp[] = array(
+	$art[] = array(
 	"num" => $article->find("id")
 	);
 }
-print_r($article);
+print_r($art[]);
 
 $links = pq("#post-3358")->find("div");
 
