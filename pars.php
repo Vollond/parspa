@@ -16,10 +16,10 @@ $tmp = array();
 
 foreach($links as $link){
 
+<?php echo "$link"; ?>
+
 	$link = pq($link);
-<?php foreach($link as $value):
-echo "$link";
- ?>
+
 
 	$tmp[] = array(
 		"text" => $link->text(),
