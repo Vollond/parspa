@@ -75,6 +75,7 @@ foreach($tmp as $value):
 function add_post($num){
 	global $db;
 	$query = "insert into posts (num) values('{$num}')";
-	mysqli_query($db,$query) or echo("пост не добавлен");
+	mysqli_query($db,$query);
+	
 }
 ?>
