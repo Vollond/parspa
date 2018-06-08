@@ -10,7 +10,7 @@ require('PQ/phpQuery/phpQuery.php');
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 
 phpQuery::newDocument($html);
-
+/*
 $articls = $html->find("id");
 
 $art = array();
@@ -22,7 +22,7 @@ $article = pq($article);
 	$art[] = array(
 	"num" => $article
 	);
-}
+}*/
 
 $links = pq("#post-3358")->find("div");
 
