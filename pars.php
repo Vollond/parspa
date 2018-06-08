@@ -19,7 +19,7 @@ foreach($links as $link){
 <?php echo "$link"; ?>
  */
 	$link = pq($link);
-<?php print "$link"; ?>
+<?php print_r($link); ?>
 
 
 	$tmp[] = array(
