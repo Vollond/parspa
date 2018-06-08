@@ -40,7 +40,7 @@ phpQuery::unloadDocuments();
 	
 		<?php print_r($value["url"]);
 			  echo($value["text2"]);
-			  echo "$result";
+			  echo ("$result");
 			?>
 	
 	<?php endforeach; ?>
