@@ -28,9 +28,11 @@ foreach($links as $link){
 		"url"  => $link->attr("href"),
 		"img"  => $link->find("img"),
 		"text2" => $link->find("p")
-		
 	);
 }
+
+
+print_r($tmp[]);
 
 foreach($tmp as $value): 
 preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $result);
