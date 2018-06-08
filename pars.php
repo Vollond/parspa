@@ -32,7 +32,7 @@ foreach($links as $link){
 }
 
 
-print_r($tmp["text"]);
+print_r($tmp["text2"]);
 
 foreach($tmp as $value): 
 preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $result);
