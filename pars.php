@@ -45,7 +45,7 @@ phpQuery::unloadDocuments();
 
 <?php 
 foreach($art as $value): 
-echo ($value);
+echo ($value["num"]);
 echo "\n";
 endforeach;
 ?>
