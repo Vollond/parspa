@@ -53,7 +53,12 @@ phpQuery::unloadDocuments();
 		echo($result[0][0]);
 		echo"\n";
 		echo($result2[0][0]);
-
+		
+		echo"\n\n\n";
+		$txt = $value["text2"];
+		$img = $result[0][0];
+		$url = $result2[0][0];
+		echo"$txt \n $img \n  $url ";
 			?>
 	
 	<?php endforeach; ?>
