@@ -11,7 +11,11 @@ $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/"
 
 phpQuery::newDocument($html);
 
-$article = pq("article")->find("id");
+$articls = pq("article")->find("id");
+foreach($articls as $article){
+	$tmp[] = array(
+	"num" => $article->find("id"),
+}
 print_r($article);
 
 $links = pq("#post-3358")->find("div");
