@@ -26,11 +26,12 @@ foreach($links as $link){
 	$tmp[] = array(
 		"text" => $link->text(),
 		"url"  => $link->attr("href"),
-		"img"  => $link->find("img")->attr("scr"),
+		"img"  => $link->find("img"),
 		"text2" => $link->find("p")
 		
 	);
 }
+preg_match_all(''/<img[^>]+>/i'',$tmp[img], $result);
 
 phpQuery::unloadDocuments();
 ?>
@@ -39,7 +40,7 @@ phpQuery::unloadDocuments();
 	
 		<?php print_r($value["url"]);
 			  echo($value["text2"]);
-			  echo($value["img"]);
+			  echo($value["$result"]);
 			?>
 	
 	<?php endforeach; ?>
