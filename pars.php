@@ -16,12 +16,8 @@ $links = pq("#post-3372")->find("div");
 $tmp = array();
 
 foreach($links as $link){
-/**
-<?php echo "$link"; ?>
- */
+
 	$link = pq($link);
-
-
 
 	$tmp[] = array(
 		"text" => $link->text(),
@@ -31,13 +27,15 @@ foreach($links as $link){
 	);
 }
 
+
 foreach($tmp as $value): 
 preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $result);
  endforeach; 
  
  foreach($tmp as $value): 
-preg_match_all('/(href)=("|\')[^"\'>]+',$value["url"], $result2);
-print_r ($result2);
+preg_match_all('/(href)=("|\')[^"\'>]+',$value["url"], $resultt);
+print_r ($resultt);
+echo("$resultt");
  endforeach; 
  
 phpQuery::unloadDocuments();
