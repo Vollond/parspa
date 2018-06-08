@@ -27,16 +27,6 @@ foreach($links as $link){
 	);
 }
 
-/*
-foreach($tmp as $value): 
-preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $result);
- endforeach; 
- 
- foreach($tmp as $value): 
-preg_match_all('/(href)=("|\')[^"\'>]+/',$value["text2"], $resultt);
-//print_r ($resultt);
-endforeach; 
- */
 phpQuery::unloadDocuments();
 ?>
 
@@ -46,16 +36,13 @@ phpQuery::unloadDocuments();
 		preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $result);
 		preg_match_all('/(href)=("|\')[^"\'>]+/',$value["text2"], $result2);
 		preg_match_all('/(<p>)[^<]+/',$value["text2"], $result3);
-
-//		echo($value["text2"]);
-//		echo($result[0][0]);
-//		echo($result2[0][0]);
-		
-		echo"\n\n\n";
 		$txt = $result3[0][0];
 		$img = $result[0][0];
 		$url = $result2[0][0];
-//		echo"$txt \n $img \n  $url ";
+		$txt = mb_substr( $result3[0][0], 3);
+		$img = mb_substr( $result[0][0], 5);
+		$url = mb_substr( $result2[0][0], 6);
+		
 			?>
 	
 	<?php endforeach; ?>
