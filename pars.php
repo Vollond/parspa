@@ -46,6 +46,7 @@ phpQuery::unloadDocuments();
 
 foreach($art as $value): 
 echo ($value["num"]);
+add_post($value["num"]);
 echo "\n";
 endforeach;
 
