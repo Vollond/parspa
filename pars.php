@@ -11,12 +11,16 @@ $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/"
 
 phpQuery::newDocument($html);
 
-$articls = pq("article")->find("id");
+$articls = pq("#post-3358")->find("div");
+
 $art = array();
+
 foreach($articls as $article){
-		$article = pq($article);
+	
+$article = pq($article);
+		
 	$art[] = array(
-	"num" => $article->find("id")
+	"num" => $article->find("href")
 	);
 }
 print_r($art[]);
