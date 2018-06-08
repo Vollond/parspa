@@ -45,13 +45,15 @@ phpQuery::unloadDocuments();
 	
 		<?php 
 		preg_match_all('/(href)=("|\')[^"\'>]+/',$value["text2"], $result2);
-		print_r($result2);
+		//print_r($result2);
 		echo"00\n";
 	//	print_r($value["url"]);
 		echo"1\n";
 		echo($value["text2"]);
 		echo"2\n";  
 		echo($result[0][0]);
+		echo($result2[0][0]);
+
 			?>
 	
 	<?php endforeach; ?>
