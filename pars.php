@@ -33,7 +33,7 @@ preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $result);
  endforeach; 
  
  foreach($tmp as $value): 
-preg_match_all('/(href)=("|\')[^"\'>]+',$value["url"], $resultt);
+preg_match_all('/(href)=("|\')[^"\'>]+',$value["text2"], $resultt);
 print_r ($resultt);
 echo("$resultt");
  endforeach; 
