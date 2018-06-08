@@ -13,6 +13,7 @@ phpQuery::newDocument($html);
 
 $articls = pq("article")->find("id");
 foreach($articls as $article){
+		$article = pq($article);
 	$art[] = array(
 	"num" => $article->find("id")
 	);
