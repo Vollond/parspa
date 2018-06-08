@@ -15,9 +15,9 @@ $links = pq("#post-3372")->find("a");
 $tmp = array();
 
 foreach($links as $link){
-
+/**
 <?php echo "$link"; ?>
-
+ */
 	$link = pq($link);
 
 
