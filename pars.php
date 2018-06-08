@@ -34,13 +34,12 @@ foreach($links as $link){
 
 phpQuery::unloadDocuments();
 ?>
-<ul>
+
 	<?php foreach($tmp as $value): ?>
-	<li>
-		<?php echo($value["url"]);
+	
+		<?php print_r($value["url"]);
 			  echo($value["text2"]);
 			  echo($value["img"]);
 			?>
-	</li>
+	
 	<?php endforeach; ?>
-</ul>
