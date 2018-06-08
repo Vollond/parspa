@@ -31,7 +31,8 @@ foreach($links as $link){
 		
 	);
 }
-$result=$tmp["img"];
+//$result=
+echo $tmp["img"];
 //preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$tmp["img"], $result);
 phpQuery::unloadDocuments();
 ?>
