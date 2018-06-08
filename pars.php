@@ -43,9 +43,9 @@ phpQuery::unloadDocuments();
 	
 	<?php endforeach; ?>
 <?php 	
-		$txt = mb_substr( $txt, 3);
-		$img = mb_substr( $img, 5);
-		$url = mb_substr( $url, 6);
+	//	$txt = mb_substr( $txt, 3);
+	//	$img = mb_substr( $img, 5);
+	//	$url = mb_substr( $url, 6);
 		
 		echo"$txt \n $img \n  $url ";
 ?>
