@@ -11,7 +11,7 @@ $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/"
 
 phpQuery::newDocument($html);
 
-$articls = pq("#post-3358")->find("div");
+$articls = pq("div.content")->find("article");
 
 $art = array();
 
@@ -20,7 +20,7 @@ foreach($articls as $article){
 $article = pq($article);
 		
 	$art[] = array(
-	"num" => $article->find("img")
+	"num" => $article->find("id")
 	);
 }
 
