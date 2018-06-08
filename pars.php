@@ -46,7 +46,7 @@ phpQuery::unloadDocuments();
 	
 		<?php print_r($value["url"]);
 			  echo($value["text2"]);
-			  echo ($result[0][6]);
+			  echo ($result[0][0]);
 			?>
 	
 	<?php endforeach; ?>
