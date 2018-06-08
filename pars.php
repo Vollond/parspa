@@ -33,7 +33,7 @@ foreach($links as $link){
 }
 //$result=
 	<?php foreach($tmp as $value): 
- echo($value["img"]);
+ echo($value["text2"]);
  endforeach; ?>
 //preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$tmp["img"], $result);
 phpQuery::unloadDocuments();
