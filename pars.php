@@ -9,7 +9,9 @@ require('PQ/phpQuery/phpQuery.php');
 
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 
-phpQuery::newDocument($html);
+$htmlpq = phpQuery::newDocument($html);
+$pq = pq($html);
+$elem = $pq->find('#article');
 /*
 $articls = $html->find("id");
 
