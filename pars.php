@@ -31,6 +31,8 @@ foreach($links as $link){
 	);
 }
 
+echo($link->attr("href"));
+echo($tmp["text2"]);
 
 print_r($tmp["text2"]);
 echo($tmp["text2"]);
