@@ -6,7 +6,7 @@ global $db;
 $num="111";
 $query = "insert into posts (num) values('{$num}')";
 mysqli_query($db,$query) or die("пост не добавлен");
-	
+	echo "lol";
 	
 function add_post($num){
 	global $db;
