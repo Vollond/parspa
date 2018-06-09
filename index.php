@@ -93,7 +93,7 @@ foreach($art as $value):
 //echo ($value["num"]);
 //add_post($value["num"]);
 //echo "\n";
-$testvalue="$testvalue $value["num"]"
+$testvalue="$testvalue $value["num"]";
 	$bot->sendMessage($message->getFrom()->getUsername(), $testvalue);
 	$bot->sendMessage($message->getFrom()->getUsername(), $value["num"]);
 endforeach;
