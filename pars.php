@@ -26,7 +26,21 @@ $article = pq($article);
 	);
 }
 
-$links = pq("#post-3358")->find("div");
+
+phpQuery::unloadDocuments();
+
+foreach($art as $value): 
+echo ($value["num"]);
+add_post($value["num"]);
+echo "\n";
+endforeach;
+
+function pars_post($post_id){
+$html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
+
+$pq = phpQuery::newDocument($html);
+
+$links = pq("#$post_id")->find("div");
 
 $tmp = array();
 
@@ -43,13 +57,6 @@ foreach($links as $link){
 }
 
 phpQuery::unloadDocuments();
-
-foreach($art as $value): 
-echo ($value["num"]);
-add_post($value["num"]);
-echo "\n";
-endforeach;
-
 
 
 foreach($tmp as $value): 
@@ -69,14 +76,16 @@ foreach($tmp as $value):
 		$url = substr( $url, 6);
 		
 		echo"$txt \n $img \n  $url ";
-
+}
 
 
 function add_post($num){
 	global $db;
 	$query = "insert into posts (num) values('{$num}')";
 	if (mysqli_query($db,$query)==true)
-	{echo "true!!";}
-	else{echo "false!!";}
+	{
+		echo "true!!";
+		pars_post($num);
+}
 }
 ?>
