@@ -10,7 +10,7 @@ require_once("vendor/autoload.php");
 // подрубаем базу данных
 require_once("db_connect.php");
 require_once("users.php");
-
+require_once("pars.php");
 // дебаг
 if(true){
 	error_reporting(E_ALL & ~(E_NOTICE | E_USER_NOTICE | E_DEPRECATED));
@@ -62,8 +62,6 @@ $bot->command('update_posts', function ($message) use ($bot) {
 	$plink = "http://web.kpi.kharkov.ua/cmps/ru/kharkiv-project-management-day-krupnejshee-it-sobytie-v-ukraine/";
 	$ptext = "10 марта состоялась конференция, посвященная проектному менеджменту в IT — Kharkiv Project Management Day — крупнейшее событие в Украине. В конференции приняло участие около 400 проектных IT-менеджеров со всей страны. Своим опытом для них поделились более 40 опытных спикеров, среди них доцент кафедры компьютерного моделирования процессов и систем, к.т.н. — … ";
 	$p_text = "$ptext [Читать дальше]($plink)";
-	//$bot->sendPhoto($message->getChat()->getId(), $img, $soobshen,"html");
-   // $bot->sendPhoto("@kaftest", $img, "[название ссылки](http://web.kpi.kharkov.ua/cmps/ru/kharkiv-project-management-day-krupnejshee-it-sobytie-v-ukraine/) [inline URL](http://www.example.com/) <b>bold</b>", "markdown", null,null,$keyboard);
 	$bot->sendPhoto("@kaftest", $img);
 	$bot->sendMessage("@kaftest", $p_text, "markdown");
 
