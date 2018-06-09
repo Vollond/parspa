@@ -73,12 +73,11 @@ foreach($tmp as $value):
 		$txt = substr( $txt, 3);
 		$img = substr( $img, 5);
 		$url = substr( $url, 6);
-		echo"$txt \n $img \n  $url ";
 		
-	$p_text = "$txt [Читать дальше]($url)";
-	$bot->sendPhoto("@kaftest", $img);
-	$bot->sendMessage("@kaftest", $p_text, "markdown");
-
+		$img2 = preg_replace('/(min-|)\d\d\dx\d\d\d\./', '.', $img);
+		echo "\n $img2 \n"
+		echo"$txt \n $img \n  $url ";
+	
 }
 
 
