@@ -79,8 +79,8 @@ $bot->on(function($update) use ($bot, $callback_loc, $find_command){
 	$callback = $update->getCallbackQuery();
 	$message = $callback->getMessage();
 	$chatId = $message->getChat()->getId();
-	$inlmsgid = $message->getInlineMessageId();
-	$bot->sendMessage($message->getChat()->getId(), $inlmsgid);
+	//$inlmsgid = $message->getInlineMessageId();
+	$bot->sendMessage($message->getChat()->getId(), "123");
 	$data = $callback->getData();
 	$text = $callback->getText();
 	
