@@ -74,7 +74,7 @@ foreach($tmp as $value):
 		$txt = substr( $txt, 3);
 		$img = substr( $img, 5);
 		$url = substr( $url, 6);
-		
+		echo substr_replace($img, '', 8, -4) . "<br />\n";
 		echo"$txt \n $img \n  $url ";
 }
 
