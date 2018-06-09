@@ -62,7 +62,7 @@ $bot->command('update_posts', function ($message) use ($bot) {
 	$p_text = "[название ссылки](http://web.kpi.kharkov.ua/cmps/ru/kharkiv-project-management-day-krupnejshee-it-sobytie-v-ukraine/) [inline URL](http://www.example.com/) <b>bold</b>";
 	//$bot->sendPhoto($message->getChat()->getId(), $img, $soobshen,"html");
    // $bot->sendPhoto("@kaftest", $img, "[название ссылки](http://web.kpi.kharkov.ua/cmps/ru/kharkiv-project-management-day-krupnejshee-it-sobytie-v-ukraine/) [inline URL](http://www.example.com/) <b>bold</b>", "markdown", null,null,$keyboard);
-	$bot->sendPhoto("@kaftest", $img, $p_text, "html", "html", "html");
+	$bot->sendPhoto("@kaftest", $img, $p_text, "html", "html");
 	$bot->sendMessage("@kaftest", $p_text, "html");
 
 });
