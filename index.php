@@ -60,7 +60,10 @@ $bot->command('start', function ($message) use ($bot) {
 });
 
 
-	$like = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
+	
+	
+	$bot->command('like', function ($message) use ($bot) {
+		$like = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
 		[
 			[
 				['callback_data' => 'data_test', 'text' => 'Answer'],
@@ -68,8 +71,6 @@ $bot->command('start', function ($message) use ($bot) {
 			]
 		]
 	);
-	
-	$bot->command('like', function ($message) use ($bot) {
 $bot->sendMessage($message->getChat()->getId(), "тест", false, null,null,$like);
 });
 	
