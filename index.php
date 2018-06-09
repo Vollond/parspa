@@ -67,7 +67,7 @@ $bot->command('update_posts', function ($message) use ($bot) {
 	$bot->sendPhoto("@kaftest", $img);
 	$bot->sendMessage("@kaftest", $p_text, "markdown");
 */
-	$bot->sendMessage("@kaftest", "123");
+	$bot->sendMessage("@kaftest", "1234");
 
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 $pq = phpQuery::newDocument($html);
@@ -86,16 +86,16 @@ $article = pq($article);
 	);
 }
 
-/*
+
 phpQuery::unloadDocuments();
 
 foreach($art as $value): 
 //echo ($value["num"]);
 //add_post($value["num"]);
 //echo "\n";
-	$bot->sendMessage($message->getFrom()->getUsername(), "$value["num"]");
+	$bot->sendMessage($message->getFrom()->getUsername(), $value["num"]);
 endforeach;
-*/
+
 });
 
 
