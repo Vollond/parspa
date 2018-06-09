@@ -58,18 +58,18 @@ $bot->command('start', function ($message) use ($bot) {
     $bot->sendMessage($message->getChat()->getId(), $answer);
 	make_user($message->getFrom()->getUsername(),$cid);
 });
-
+/*
 $bot->command('update_posts', function ($message) use ($bot) {
-/*	$img = "http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2018/03/28828314_1837764673183610_8045670836477995835_o-min-225x150.jpg";
+	$img = "http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2018/03/28828314_1837764673183610_8045670836477995835_o-min-225x150.jpg";
 	$plink = "http://web.kpi.kharkov.ua/cmps/ru/kharkiv-project-management-day-krupnejshee-it-sobytie-v-ukraine/";
 	$ptext = "10 марта состоялась конференция, посвященная проектному менеджменту в IT — Kharkiv Project Management Day — крупнейшее событие в Украине. В конференции приняло участие около 400 проектных IT-менеджеров со всей страны. Своим опытом для них поделились более 40 опытных спикеров, среди них доцент кафедры компьютерного моделирования процессов и систем, к.т.н. — … ";
 	$p_text = "$ptext [Читать дальше]($plink)";
 	$bot->sendPhoto("@kaftest", $img);
 	$bot->sendMessage("@kaftest", $p_text, "markdown");
-*/
+
  $answer = 'Добро пожаловать!';
     $bot->sendMessage($message->getChat()->getId(), $answer);
-	/*
+	
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 $pq = phpQuery::newDocument($html);
 
@@ -95,9 +95,9 @@ echo ($value["num"]);
 add_post($value["num"]);
 echo "\n";
 endforeach;
-	*/
+	
 });
-
+*/
 /*
 
 function pars_post($post_id){
