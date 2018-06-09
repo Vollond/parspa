@@ -89,7 +89,7 @@ phpQuery::unloadDocuments();
 
 foreach($art as $value){
 	
-//$result=implode($value);
+$result=implode($value);
 //$bot->sendMessage("@kaftest", $result);
 
 
@@ -97,7 +97,7 @@ foreach($art as $value){
 	$query = "insert into posts (num) values('{$result}')";
 	if (mysqli_query($db,$query)==true)
 	{
-	//	$bot->sendMessage("@kaftest", "true");
+		//$bot->sendMessage("@kaftest", "true");
 		
 		$post_id = $result;
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
