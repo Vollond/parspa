@@ -10,7 +10,6 @@ require_once("vendor/autoload.php");
 // подрубаем базу данных
 require_once("db_connect.php");
 require_once("users.php");
-require_once("pars.php");
 
 
 // дебаг
@@ -58,7 +57,7 @@ $bot->command('start', function ($message) use ($bot) {
     $bot->sendMessage($message->getChat()->getId(), $answer);
 	make_user($message->getFrom()->getUsername(),$cid);
 });
-
+/*
 $bot->command('update_posts', function ($message) use ($bot) {
 	$img = "http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2018/03/28828314_1837764673183610_8045670836477995835_o-min-225x150.jpg";
 	$plink = "http://web.kpi.kharkov.ua/cmps/ru/kharkiv-project-management-day-krupnejshee-it-sobytie-v-ukraine/";
@@ -68,7 +67,7 @@ $bot->command('update_posts', function ($message) use ($bot) {
 	$bot->sendMessage("@kaftest", $p_text, "markdown");
 
 	
-});
+});*/
 
 // помощ
 $bot->command('help', function ($message) use ($bot) {
