@@ -68,7 +68,10 @@ $bot->command('start', function ($message) use ($bot) {
 			]
 		]
 	);
-
+	
+	$bot->command('like', function ($message) use ($bot) {
+$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null,$like);
+});
 	
 $bot->command('update_posts', function ($message) use ($bot) {
 /*	$img = "http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2018/03/28828314_1837764673183610_8045670836477995835_o-min-225x150.jpg";
