@@ -68,7 +68,7 @@ $bot->command('update_posts', function ($message) use ($bot) {
 	$bot->sendMessage("@kaftest", $p_text, "markdown");
 */
 	$bot->sendMessage("@kaftest", "123");
-	
+/*	
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 $pq = phpQuery::newDocument($html);
 
@@ -95,7 +95,7 @@ foreach($art as $value):
 //echo "\n";
 	$bot->sendMessage($message->getFrom()->getUsername(), "$value["num"]");
 endforeach;
-
+*/
 });
 
 
