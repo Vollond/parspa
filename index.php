@@ -126,12 +126,12 @@ $bot->sendMessage("@kaftest", "01");
 
 
 foreach($tmp as $value){ 
-		preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $result);
-		preg_match_all('/(href)=("|\')[^"\'>]+/',$value["text2"], $result2);
-		preg_match_all('/(<p>)[^<]+/',$value["text2"], $result3);
-		$txt = $result3[0][0];
-		$img = $result[0][0];
-		$url = $result2[0][0];
+		preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $rresult);
+		preg_match_all('/(href)=("|\')[^"\'>]+/',$value["text2"], $rresult2);
+		preg_match_all('/(<p>)[^<]+/',$value["text2"], $rresult3);
+		$txt = $rresult3[0][0];
+		$img = $rresult[0][0];
+		$url = $rresult2[0][0];
 }
 
 		$txt = substr( $txt, 3);
