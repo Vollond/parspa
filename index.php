@@ -94,10 +94,9 @@ $bot->on(function($update) use ($bot, $callback_loc, $find_command){
 			]
 		]
 	);
-		
-		$bot->editMessageReplyMarkup($chatId,$message, $inlmsgid,$like2);
-		$bot->answerCallbackQuery( $callback->getId(), "This is Ansver!",true);
-	}
+		$bot->editMessageReplyMarkup($callback->getId(),$like2);
+	//	$bot->editMessageReplyMarkup($chatId,$message, $inlmsgid,$like2);
+	//	$bot->answerCallbackQuery( $callback->getId(), "This is Ansver!",true);	}
 	if($data == "data_test2"){
 		$bot->sendMessage($chatId, "Это ответ!");
 		$bot->answerCallbackQuery($callback->getId()); // можно отослать пустое, чтобы просто убрать "часики" на кнопке
