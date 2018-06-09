@@ -67,9 +67,9 @@ $bot->command('update_posts', function ($message) use ($bot) {
 	$bot->sendPhoto("@kaftest", $img);
 	$bot->sendMessage("@kaftest", $p_text, "markdown");
 */
+ $answer = 'Добро пожаловать!';
+    $bot->sendMessage($message->getChat()->getId(), $answer);
 	
-	
-	$bot->sendMessage("@kaftest", $answer);
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 $pq = phpQuery::newDocument($html);
 
