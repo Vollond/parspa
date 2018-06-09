@@ -9,7 +9,7 @@ require('PQ/phpQuery/phpQuery.php');
 require_once("db_connect.php");
 require_once("index.php");
 
-function update_posts(){
+function update_posts($null){
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 $pq = phpQuery::newDocument($html);
 

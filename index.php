@@ -65,7 +65,8 @@ $bot->command('update_posts', function ($message) use ($bot) {
 	$bot->sendPhoto("@kaftest", $img);
 	$bot->sendMessage("@kaftest", $p_text, "markdown");
 */
-	update_posts();
+	$null="0";
+	update_posts($null);
 });
 
 // помощ
