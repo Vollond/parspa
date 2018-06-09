@@ -124,7 +124,7 @@ foreach($links as $link){
 phpQuery::unloadDocuments();
 
 
-$bot->sendMessage("@kaftest", "01");	
+
 foreach($tmp as $value2){ 
 		preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value2["img"], $rresult);
 		preg_match_all('/(href)=("|\')[^"\'>]+/',$value2["text2"], $rresult2);
@@ -133,12 +133,12 @@ foreach($tmp as $value2){
 		$img = $rresult[0][0];
 		$url = $rresult2[0][0];
 }
-$bot->sendMessage("@kaftest", "02");	
+
 		$txt = substr( $txt, 3);
 		$img = substr( $img, 5);
 		$url = substr( $url, 6);
 //	echo "$txt \n $img \n  $url ";
-$bot->sendMessage("@kaftest", "03");	
+
 
 	
 $p_text = "$txt [Читать дальше]($url)";
