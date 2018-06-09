@@ -125,10 +125,10 @@ phpQuery::unloadDocuments();
 
 
 $bot->sendMessage("@kaftest", "01");	
-foreach($tmp as $value){ 
-		preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $rresult);
-		preg_match_all('/(href)=("|\')[^"\'>]+/',$value["text2"], $rresult2);
-		preg_match_all('/(<p>)[^<]+/',$value["text2"], $rresult3);
+foreach($tmp as $value2){ 
+		preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value2["img"], $rresult);
+		preg_match_all('/(href)=("|\')[^"\'>]+/',$value2["text2"], $rresult2);
+		preg_match_all('/(<p>)[^<]+/',$value2["text2"], $rresult3);
 		$txt = $rresult3[0][0];
 		$img = $rresult[0][0];
 		$url = $rresult2[0][0];
