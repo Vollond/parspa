@@ -92,7 +92,16 @@ foreach($art as $value){
 	
 $result=implode($value);
 $bot->sendMessage("@kaftest", $result);
-add_postt($result);
+
+
+global $db;
+	$query = "insert into posts (num) values('{$num}')";
+	if (mysqli_query($db,$query)==true)
+	{
+		$bot->sendMessage("@kaftest", "true");
+}
+
+
 }
 });
 
@@ -146,16 +155,8 @@ $bot->sendMessage("@kaftest", $result2);
 }
 
 */
-function add_postt($result){
-	$bot->sendMessage("@kaftest", "0");
-	$bot->sendMessage("@kaftest", $result);
-/*	global $db;
-	$query = "insert into posts (num) values('{$num}')";
-	if (mysqli_query($db,$query)==true)
-	{
-//		echo "true!!";
-		pars_post($num);
-}*/
+
+
 
 }
 
