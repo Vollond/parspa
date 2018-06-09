@@ -86,7 +86,6 @@ $article = pq($article);
 	);
 }
 
-$bot->sendMessage("@kaftest", "0");
 phpQuery::unloadDocuments();
 
 foreach($art as $value): 
@@ -95,6 +94,7 @@ foreach($art as $value):
 //echo "\n";
 //$testvalue="$testvalue $value["num"]";
 //	$bot->sendMessage($message->getFrom()->getUsername(), $testvalue);
+$bot->sendMessage("@kaftest", "0");
 	$bot->sendMessage($message->getFrom()->getUsername(), $value["num"]);
 endforeach;
 
