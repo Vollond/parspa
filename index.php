@@ -86,7 +86,7 @@ $article = pq($article);
 	);
 }
 
-
+$bot->sendMessage("@kaftest", "0");
 phpQuery::unloadDocuments();
 
 foreach($art as $value): 
