@@ -64,7 +64,8 @@ $bot->command('update_posts', function ($message) use ($bot) {
 	$soobshen = "<b>жирный текст</b>";
 	$bot->sendMessage($message->getChat()->getId(), $soobshen,"html");
 	$bot->sendMessage($message->getChat()->getId(), "обновлено");
-	
+	$bot->sendPhoto($message->getChat()->getId(), $img, "[название ссылки](http://web.kpi.kharkov.ua/cmps/ru/kharkiv-project-management-day-krupnejshee-it-sobytie-v-ukraine/) [inline URL](http://www.example.com/) <b>bold</b>", "markdown", null,null,$keyboard);
+
 });
 
 // помощ
