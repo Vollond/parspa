@@ -59,10 +59,11 @@ $bot->command('start', function ($message) use ($bot) {
 
 $bot->command('update_posts', function ($message) use ($bot) {
 	$img = "http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2018/03/28828314_1837764673183610_8045670836477995835_o-min-225x150.jpg";
+	$p_text = "[название ссылки](http://web.kpi.kharkov.ua/cmps/ru/kharkiv-project-management-day-krupnejshee-it-sobytie-v-ukraine/) [inline URL](http://www.example.com/) <b>bold</b>";
 	//$bot->sendPhoto($message->getChat()->getId(), $img, $soobshen,"html");
    // $bot->sendPhoto("@kaftest", $img, "[название ссылки](http://web.kpi.kharkov.ua/cmps/ru/kharkiv-project-management-day-krupnejshee-it-sobytie-v-ukraine/) [inline URL](http://www.example.com/) <b>bold</b>", "markdown", null,null,$keyboard);
-	$bot->sendPhoto("@kaftest", $img);
-	$bot->sendMessage("@kaftest", "[название ссылки](http://web.kpi.kharkov.ua/cmps/ru/kharkiv-project-management-day-krupnejshee-it-sobytie-v-ukraine/) [inline URL](http://www.example.com/) <b>bold</b>","html");
+	$bot->sendPhoto("@kaftest", $img, $p_text, "html", "html", "html", "html");
+	$bot->sendMessage("@kaftest", $p_text, "html");
 
 });
 
