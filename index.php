@@ -99,16 +99,9 @@ $bot->sendMessage("@kaftest", $result);
 	if (mysqli_query($db,$query)==true)
 	{
 		$bot->sendMessage("@kaftest", "true");
-}
-
-
-}
-});
-
-
-
-/*
-function pars_post($post_id){
+		
+		
+		$post_id = $result;
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 
 $pq = phpQuery::newDocument($html);
@@ -151,17 +144,13 @@ $bot->sendMessage("@kaftest", $result2);
 //	$p_text = "$txt [Читать дальше]($url)";
 //	$bot->sendPhoto("@kaftest", $img);
 //	$bot->sendMessage("@kaftest", $p_text, "markdown");
-
+		
+		
 }
 
-*/
 
-
-
-
-
-
-
+}
+});
 
 
 // помощ
