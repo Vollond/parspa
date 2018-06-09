@@ -100,7 +100,6 @@ $bot->sendMessage("@kaftest", $result);
 	{
 		$bot->sendMessage("@kaftest", "true");
 		
-		
 		$post_id = $result;
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 
@@ -123,6 +122,7 @@ foreach($links as $link){
 }
 
 phpQuery::unloadDocuments();
+$bot->sendMessage("@kaftest", "01");	
 
 
 foreach($tmp as $value){ 
