@@ -136,13 +136,14 @@ foreach($tmp as $value2){
 		$txt = substr( $txt, 3);
 		$img = substr( $img, 5);
 		$url = substr( $url, 6);
-//$img2 = preg_replace('/(min-|)\d\d\dx\d\d\d\./', '.', $img);
+$img2 = preg_replace('/(-min|)-\d\d\dx\d\d\d\./', '.', $img);
+
 
 
 	
 $p_text = "$txt [Читать дальше]($url)";
-if ($img!=""){
-$bot->sendPhoto("@kaftest", $img);
+if ($img2!=""){
+$bot->sendPhoto("@kaftest", $img2);
 	}
 $bot->sendMessage("@kaftest", $p_text, "markdown");
 
