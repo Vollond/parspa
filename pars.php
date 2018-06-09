@@ -75,7 +75,8 @@ foreach($tmp as $value):
 function add_post($num){
 	global $db;
 	$query = "insert into posts (num) values('{$num}')";
-	mysqli_query($db,$query);
-	
+	if (mysqli_query($db,$query)==true)
+	{echo "true!!";}
+	else{echo "false!!";}
 }
 ?>
