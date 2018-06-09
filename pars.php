@@ -9,7 +9,8 @@ require('PQ/phpQuery/phpQuery.php');
 require_once("db_connect.php");
 require_once("index.php");
 
-function update_posts($nulll){
+
+$bot->sendMessage("@kaftest", $answer);
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 $pq = phpQuery::newDocument($html);
 
@@ -35,7 +36,7 @@ echo ($value["num"]);
 add_post($value["num"]);
 echo "\n";
 endforeach;
-}
+
 
 function pars_post($post_id){
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
@@ -78,12 +79,7 @@ foreach($tmp as $value):
 	$p_text = "$txt [Читать дальше]($url)";
 	$bot->sendPhoto("@kaftest", $img);
 	$bot->sendMessage("@kaftest", $p_text, "markdown");
-/*	public	$post_array[] = array(
-		"txt" => $txt,
-		"img"  => $img,
-		"url"  => $url
-	);*/
-}
+
 
 
 function add_post($num){
