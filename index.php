@@ -10,6 +10,7 @@ require_once("vendor/autoload.php");
 // подрубаем базу данных
 require_once("db_connect.php");
 require_once("users.php");
+require_once("pars.php");
 
 
 // дебаг
