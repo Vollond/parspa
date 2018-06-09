@@ -89,21 +89,17 @@ $article = pq($article);
 phpQuery::unloadDocuments();
 
 foreach($art as $value){
-//echo ($value["num"]);
-//add_post($value["num"]);
-//echo "\n";
-//$testvalue="$testvalue $value["num"]";
-//	$bot->sendMessage($message->getFrom()->getUsername(), $testvalue);
-$bot->sendMessage("@kaftest", "0");
+	
 $result=implode($value);
 $bot->sendMessage("@kaftest", $result);
 
+add_post($value["num"]);
 }
 });
 
 
 
-/*
+
 function pars_post($post_id){
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 
@@ -140,11 +136,13 @@ foreach($tmp as $value):
 		$txt = substr( $txt, 3);
 		$img = substr( $img, 5);
 		$url = substr( $url, 6);
-		echo"$txt \n $img \n  $url ";
-		
-	$p_text = "$txt [Читать дальше]($url)";
-	$bot->sendPhoto("@kaftest", $img);
-	$bot->sendMessage("@kaftest", $p_text, "markdown");
+//	echo "$txt \n $img \n  $url ";
+$result2=implode($txt);
+$bot->sendMessage("@kaftest", $result2);	
+	
+//	$p_text = "$txt [Читать дальше]($url)";
+//	$bot->sendPhoto("@kaftest", $img);
+//	$bot->sendMessage("@kaftest", $p_text, "markdown");
 
 }
 
@@ -154,11 +152,11 @@ function add_post($num){
 	$query = "insert into posts (num) values('{$num}')";
 	if (mysqli_query($db,$query)==true)
 	{
-		echo "true!!";
+//		echo "true!!";
 		pars_post($num);
 }
 }
-*/
+
 
 
 
