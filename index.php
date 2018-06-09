@@ -141,7 +141,9 @@ foreach($tmp as $value2){
 
 	
 $p_text = "$txt [Читать дальше]($url)";
+if ($img!=""){
 $bot->sendPhoto("@kaftest", $img);
+	}
 $bot->sendMessage("@kaftest", $p_text, "markdown");
 
 		
