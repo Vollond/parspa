@@ -160,7 +160,7 @@ $bot->command('image', function ($message) use ($bot) {
 /buttons - reply-панель с кнопками
 /getdoc - тестовый документ
 /help - помощ';
-$bot->sendPhoto("@kaftest", "[⁠](http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2018/05/photo_2018-05-25_00-13-04-min.jpg)", "markdown");
+$bot->sendMessage("@kaftest", "watfhjkhgfd**saST**FHYJGFDSADFTGHJSD S DS F123SADsdad [⁠](http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2018/05/photo_2018-05-25_00-13-04-min.jpg)", "markdown");
 });
 
 
