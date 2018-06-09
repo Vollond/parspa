@@ -74,7 +74,7 @@ $pq = phpQuery::newDocument($html);
 
 
 $articls = $pq->find("article");
-/*	
+
 
 $art = array();
 
@@ -86,7 +86,7 @@ $article = pq($article);
 	);
 }
 
-
+/*	
 phpQuery::unloadDocuments();
 
 foreach($art as $value): 
