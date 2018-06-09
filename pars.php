@@ -80,6 +80,7 @@ foreach($tmp as $value):
 	$bot->sendPhoto("@kaftest", $img);
 	$bot->sendMessage("@kaftest", $p_text, "markdown");
 
+}
 
 
 function add_post($num){
