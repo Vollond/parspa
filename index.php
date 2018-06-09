@@ -95,7 +95,7 @@ $bot->sendMessage("@kaftest", $result);
 
 
 global $db;
-	$query = "insert into posts (num) values('{$num}')";
+	$query = "insert into posts (num) values('{$result}')";
 	if (mysqli_query($db,$query)==true)
 	{
 		$bot->sendMessage("@kaftest", "true");
