@@ -73,6 +73,44 @@ $bot->command('start', function ($message) use ($bot) {
 	);
 $bot->sendMessage($message->getChat()->getId(), "тест", false, null,null,$like);
 });
+
+
+$bot->on(function($update) use ($bot, $callback_loc, $find_command){
+	$callback = $update->getCallbackQuery();
+	$message = $callback->getMessage();
+	$chatId = $message->getChat()->getId();
+	$inlmsgid = $message->getInlineMessageId();
+	$bot->sendMessage($message->getChat()->getId(), $inlmsgid);
+	$data = $callback->getData();
+	$text = $callback->getText();
+	
+	if($data == "data_test"){
+		$love1="$text 1";
+			$like2 = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
+		[
+			[
+				['callback_data' => 'data_test', 'text' => "$love1"],
+				['callback_data' => 'data_test2', 'text' => 'ОтветЪ']
+			]
+		]
+	);
+		
+		$bot->editMessageReplyMarkup($chatId,$message,$inlmsgid,$like2);
+		$bot->answerCallbackQuery( $callback->getId(), "This is Ansver!",true);
+	}
+	if($data == "data_test2"){
+		$bot->sendMessage($chatId, "Это ответ!");
+		$bot->answerCallbackQuery($callback->getId()); // можно отослать пустое, чтобы просто убрать "часики" на кнопке
+	}
+
+}, function($update){
+	$callback = $update->getCallbackQuery();
+	if (is_null($callback) || !strlen($callback->getData()))
+		return false;
+	return true;
+});
+
+
 	
 $bot->command('update_posts', function ($message) use ($bot) {
 /*	$img = "http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2018/03/28828314_1837764673183610_8045670836477995835_o-min-225x150.jpg";
