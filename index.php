@@ -80,7 +80,7 @@ $bot->on(function($update) use ($bot, $callback_loc, $find_command){
 	$message = $callback->getMessage();
 	$chatId = $message->getChat()->getId();
 	$inlmsgid = $callback->getInlineMessageId();
-	$bot->sendMessage($message->getChat()->getId(), "123");
+	$bot->sendMessage($message->getChat()->getId(), "$inlmsgid");
 	$data = $callback->getData();
 	$text = $callback->getText();
 	
@@ -95,7 +95,7 @@ $bot->on(function($update) use ($bot, $callback_loc, $find_command){
 		]
 	);
 		
-		$bot->editMessageReplyMarkup($inlmsgid,$like2);
+		$bot->editMessageReplyMarkup($chatId,$message, $inlmsgid,$like2);
 		$bot->answerCallbackQuery( $callback->getId(), "This is Ansver!",true);
 	}
 	if($data == "data_test2"){
