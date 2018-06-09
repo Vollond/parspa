@@ -67,7 +67,6 @@ $bot->command('update_posts', function ($message) use ($bot) {
 	$bot->sendPhoto("@kaftest", $img);
 	$bot->sendMessage("@kaftest", $p_text, "markdown");
 */
-	$bot->sendMessage("@kaftest", "12534");
 
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 $pq = phpQuery::newDocument($html);
@@ -90,15 +89,15 @@ phpQuery::unloadDocuments();
 
 foreach($art as $value){
 	
-$result=implode($value);
-$bot->sendMessage("@kaftest", $result);
+//$result=implode($value);
+//$bot->sendMessage("@kaftest", $result);
 
 
 	global $db;
 	$query = "insert into posts (num) values('{$result}')";
 	if (mysqli_query($db,$query)==true)
 	{
-		$bot->sendMessage("@kaftest", "true");
+	//	$bot->sendMessage("@kaftest", "true");
 		
 		$post_id = $result;
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
@@ -137,7 +136,7 @@ foreach($tmp as $value2){
 		$txt = substr( $txt, 3);
 		$img = substr( $img, 5);
 		$url = substr( $url, 6);
-//	echo "$txt \n $img \n  $url ";
+
 
 
 	
