@@ -68,7 +68,9 @@ $bot->command('update_posts', function ($message) use ($bot) {
 	$bot->sendMessage("@kaftest", $p_text, "markdown");
 */
 	
-	$html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
+	
+	$bot->sendMessage("@kaftest", $answer);
+$html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 $pq = phpQuery::newDocument($html);
 
 
@@ -93,6 +95,9 @@ echo ($value["num"]);
 add_post($value["num"]);
 echo "\n";
 endforeach;
+	
+});
+
 
 
 function pars_post($post_id){
@@ -136,7 +141,7 @@ foreach($tmp as $value):
 	$p_text = "$txt [Читать дальше]($url)";
 	$bot->sendPhoto("@kaftest", $img);
 	$bot->sendMessage("@kaftest", $p_text, "markdown");
-
+}
 
 
 function add_post($num){
@@ -148,11 +153,6 @@ function add_post($num){
 		pars_post($num);
 }
 }
-	
-	
-	
-	
-});
 
 // помощ
 $bot->command('help', function ($message) use ($bot) {
