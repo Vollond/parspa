@@ -95,8 +95,8 @@ foreach($art as $value){
 //$testvalue="$testvalue $value["num"]";
 //	$bot->sendMessage($message->getFrom()->getUsername(), $testvalue);
 $bot->sendMessage("@kaftest", "0");
-
-$bot->sendMessage($message->getFrom()->getUsername(), ($value["num"]));
+$result=$value["num"];
+$bot->sendMessage("@kaftest", $result[0][0]);
 
 }
 });
