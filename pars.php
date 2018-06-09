@@ -74,7 +74,7 @@ foreach($tmp as $value):
 		$img = substr( $img, 5);
 		$url = substr( $url, 6);
 		
-		$img2 = preg_replace('/(-min|)-\d\d\dx\d\d\d\./', '.', $img);
+		$img2 = preg_replace('/-\d\d\dx\d\d\d\./', '.', $img);
 		echo "\n $img2 \n";
 		echo"$txt \n $img \n  $url ";
 	

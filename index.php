@@ -136,7 +136,7 @@ foreach($tmp as $value2){
 		$txt = substr( $txt, 3);
 		$img = substr( $img, 5);
 		$url = substr( $url, 6);
-$img2 = preg_replace('/(-min|)-\d\d\dx\d\d\d\./', '.', $img);
+$img2 = preg_replace('/-\d\d\dx\d\d\d\./', '.', $img);
 
 
 
