@@ -139,8 +139,8 @@ $bot->sendMessage("@kaftest", "02");
 		$url = substr( $url, 6);
 //	echo "$txt \n $img \n  $url ";
 $bot->sendMessage("@kaftest", "03");	
-$bot->sendMessage("@kaftest", $img);	
-$result2=implode($img);
+$bot->sendMessage("@kaftest", $txt);	
+$result2=implode($txt);
 $bot->sendMessage("@kaftest", $result2);	
 	
 //	$p_text = "$txt [Читать дальше]($url)";
