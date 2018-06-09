@@ -91,9 +91,9 @@ phpQuery::unloadDocuments();
 foreach($art as $value){
 	
 $result=implode($value);
-//$bot->sendMessage("@kaftest", $result);
+$bot->sendMessage("@kaftest", $result);
 
-add_post($result);
+//add_post($result);
 }
 });
 
@@ -146,19 +146,19 @@ $bot->sendMessage("@kaftest", $result2);
 
 }
 
-*/
+*//*
 function add_post($num){
 	$bot->sendMessage("@kaftest", "0");
 	$bot->sendMessage("@kaftest", $num);
-/*	global $db;
+	global $db;
 	$query = "insert into posts (num) values('{$num}')";
 	if (mysqli_query($db,$query)==true)
 	{
 //		echo "true!!";
 		pars_post($num);
 }
-*/
-}
+
+}*/
 
 
 
