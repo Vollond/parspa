@@ -59,6 +59,17 @@ $bot->command('start', function ($message) use ($bot) {
 	make_user($message->getFrom()->getUsername(),$cid);
 });
 
+$bot->command("ibutton", function ($message) use ($bot) {
+	$keyboard = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
+		[
+			[
+				['callback_data' => 'data_test', 'text' => 'Answer'],
+				['callback_data' => 'data_test2', 'text' => 'ОтветЪ']
+			]
+		]
+	);
+});	
+	
 $bot->command('update_posts', function ($message) use ($bot) {
 /*	$img = "http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2018/03/28828314_1837764673183610_8045670836477995835_o-min-225x150.jpg";
 	$plink = "http://web.kpi.kharkov.ua/cmps/ru/kharkiv-project-management-day-krupnejshee-it-sobytie-v-ukraine/";
@@ -147,7 +158,7 @@ $p_text = "$txt [Читать дальше]($url) [⁠]($img2)";
 	else{
 $p_text = "$txt [Читать дальше]($url)";
 	}
-$bot->sendMessage("@kaftest", $p_text, "markdown");
+$bot->sendMessage("@kaftest", $p_text, "markdown",$like);
 
 		
 }
