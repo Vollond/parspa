@@ -146,9 +146,9 @@ $bot->sendMessage("@kaftest", $result2);
 }
 
 */
-function add_postt($num){
+function add_postt($result){
 	$bot->sendMessage("@kaftest", "0");
-	$bot->sendMessage("@kaftest", $num);
+	$bot->sendMessage("@kaftest", $result);
 /*	global $db;
 	$query = "insert into posts (num) values('{$num}')";
 	if (mysqli_query($db,$query)==true)
