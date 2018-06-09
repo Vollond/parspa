@@ -11,7 +11,7 @@ require_once("vendor/autoload.php");
 require_once("db_connect.php");
 require_once("users.php");
 require_once("pars.php");
-require_once('PQ/phpQuery/phpQuery.php');
+
 
 // дебаг
 if(true){
@@ -58,7 +58,7 @@ $bot->command('start', function ($message) use ($bot) {
     $bot->sendMessage($message->getChat()->getId(), $answer);
 	make_user($message->getFrom()->getUsername(),$cid);
 });
-/*
+
 $bot->command('update_posts', function ($message) use ($bot) {
 	$img = "http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2018/03/28828314_1837764673183610_8045670836477995835_o-min-225x150.jpg";
 	$plink = "http://web.kpi.kharkov.ua/cmps/ru/kharkiv-project-management-day-krupnejshee-it-sobytie-v-ukraine/";
@@ -67,93 +67,9 @@ $bot->command('update_posts', function ($message) use ($bot) {
 	$bot->sendPhoto("@kaftest", $img);
 	$bot->sendMessage("@kaftest", $p_text, "markdown");
 
- $answer = 'Добро пожаловать!';
-    $bot->sendMessage($message->getChat()->getId(), $answer);
-	
-$html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
-$pq = phpQuery::newDocument($html);
-
-
-$articls = $pq->find("article");
-
-
-$art = array();
-
-foreach($articls as $article){
-	
-$article = pq($article);
-	$art[] = array(
-	"num" => $article->attr("id")
-	);
-}
-
-
-phpQuery::unloadDocuments();
-
-foreach($art as $value): 
-echo ($value["num"]);
-add_post($value["num"]);
-echo "\n";
-endforeach;
 	
 });
-*/
-/*
 
-function pars_post($post_id){
-$html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
-
-$pq = phpQuery::newDocument($html);
-
-$links = pq("#$post_id")->find("div");
-
-$tmp = array();
-
-foreach($links as $link){
-
-	$link = pq($link);
-
-	$tmp[] = array(
-		"text" => $link->text(),
-		"url"  => $link->attr("href"),
-		"img"  => $link->find("img"),
-		"text2" => $link->find("p")
-	);
-}
-
-phpQuery::unloadDocuments();
-
-
-foreach($tmp as $value): 
-		preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $result);
-		preg_match_all('/(href)=("|\')[^"\'>]+/',$value["text2"], $result2);
-		preg_match_all('/(<p>)[^<]+/',$value["text2"], $result3);
-		$txt = $result3[0][0];
-		$img = $result[0][0];
-		$url = $result2[0][0];
-	 endforeach; 
-
-		$txt = substr( $txt, 3);
-		$img = substr( $img, 5);
-		$url = substr( $url, 6);
-		echo"$txt \n $img \n  $url ";
-		
-	$p_text = "$txt [Читать дальше]($url)";
-	$bot->sendPhoto("@kaftest", $img);
-	$bot->sendMessage("@kaftest", $p_text, "markdown");
-}
-
-
-function add_post($num){
-	global $db;
-	$query = "insert into posts (num) values('{$num}')";
-	if (mysqli_query($db,$query)==true)
-	{
-		echo "true!!";
-		pars_post($num);
-}
-}
-*/
 // помощ
 $bot->command('help', function ($message) use ($bot) {
     $answer = 'Команды:
