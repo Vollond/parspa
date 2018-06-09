@@ -9,7 +9,11 @@ require('PQ/phpQuery/phpQuery.php');
 require_once("db_connect.php");
 require_once("index.php");
 
+<<<<<<< HEAD
 
+=======
+function update_posts($answer){
+>>>>>>> 3d0cdd8695b0f96bc6eb45e290a20c017be37fd3
 $bot->sendMessage("@kaftest", $answer);
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 $pq = phpQuery::newDocument($html);
