@@ -11,7 +11,7 @@ require_once("vendor/autoload.php");
 require_once("db_connect.php");
 require_once("users.php");
 require_once("pars.php");
-require('PQ/phpQuery/phpQuery.php');
+require_once('PQ/phpQuery/phpQuery.php');
 
 // дебаг
 if(true){
