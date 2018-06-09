@@ -124,14 +124,14 @@ foreach($links as $link){
 phpQuery::unloadDocuments();
 
 
-foreach($tmp as $value): 
+foreach($tmp as $value){ 
 		preg_match_all('/(img|src)=("|\')[^"\'>]+/i',$value["img"], $result);
 		preg_match_all('/(href)=("|\')[^"\'>]+/',$value["text2"], $result2);
 		preg_match_all('/(<p>)[^<]+/',$value["text2"], $result3);
 		$txt = $result3[0][0];
 		$img = $result[0][0];
 		$url = $result2[0][0];
-	 endforeach; 
+}
 
 		$txt = substr( $txt, 3);
 		$img = substr( $img, 5);
