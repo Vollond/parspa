@@ -80,12 +80,12 @@ $bot->on(function($update) use ($bot, $callback_loc, $find_command){
 	$message = $callback->getMessage();
 	$chatId = $message->getChat()->getId();
 	$inlmsgid = $callback->getInlineMessageId();
-	$bot->sendMessage($message->getChat()->getId(), "$inlmsgid");
 	$data = $callback->getData();
-	$text = $callback->getText();
-	
+	//$text = $callback->getText();
+	//	$bot->sendMessage($message->getChat()->getId(), "$inlmsgid");
+
 	if($data == "data_test"){
-		$love1="$text 1";
+		//$love1="$text 1";
 			$like2 = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
 		[
 			[
