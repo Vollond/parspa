@@ -90,10 +90,10 @@ phpQuery::unloadDocuments();
 
 foreach($art as $value){
 	
-//$result=implode($value);
+$result=implode($value);
 //$bot->sendMessage("@kaftest", $result);
 
-add_post($value["num"]);
+add_post($result);
 }
 });
 
