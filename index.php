@@ -90,8 +90,8 @@ phpQuery::unloadDocuments();
 
 foreach($art as $value){
 	
-$result=implode($value);
-$bot->sendMessage("@kaftest", $result);
+//$result=implode($value);
+//$bot->sendMessage("@kaftest", $result);
 
 add_post($value["num"]);
 }
@@ -99,7 +99,7 @@ add_post($value["num"]);
 
 
 
-
+/*
 function pars_post($post_id){
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 
@@ -146,8 +146,10 @@ $bot->sendMessage("@kaftest", $result2);
 
 }
 
-
+*/
 function add_post($num){
+	$bot->sendMessage("@kaftest", "0");
+	$bot->sendMessage("@kaftest", $num);
 	global $db;
 	$query = "insert into posts (num) values('{$num}')";
 	if (mysqli_query($db,$query)==true)
