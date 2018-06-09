@@ -67,7 +67,6 @@ $bot->command('update_posts', function ($message) use ($bot) {
 	$bot->sendPhoto("@kaftest", $img);
 	$bot->sendMessage("@kaftest", $p_text, "markdown");
 */
-<<<<<<< HEAD
  $answer = 'Добро пожаловать!';
     $bot->sendMessage($message->getChat()->getId(), $answer);
 	
@@ -97,10 +96,6 @@ add_post($value["num"]);
 echo "\n";
 endforeach;
 	
-=======
-	$answer = 'Добро пожаловать!';
-	update_posts($answer);
->>>>>>> 3d0cdd8695b0f96bc6eb45e290a20c017be37fd3
 });
 
 
