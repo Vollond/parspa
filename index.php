@@ -261,13 +261,13 @@ $bot->command('getpic', function ($message) use ($bot) {
 
     $bot->sendPhoto($message->getChat()->getId(), $pic);
 });
-
+/*
 // передаем документ
 $bot->command('getdoc', function ($message) use ($bot) {
 	$document = new \CURLFile('shtirner.txt');
 
     $bot->sendDocument($message->getChat()->getId(), $document);
-});
+});*/
 
 // Кнопки у сообщений
 $bot->command("ibutton", function ($message) use ($bot) {
@@ -310,6 +310,7 @@ $bot->on(function($update) use ($bot, $callback_loc, $find_command){
 });
 */
 // обработка инлайнов
+/*
 $bot->inlineQuery(function ($inlineQuery) use ($bot) {
 	mb_internal_encoding("UTF-8");
 	$qid = $inlineQuery->getId();
@@ -361,7 +362,7 @@ $bot->inlineQuery(function ($inlineQuery) use ($bot) {
 		file_put_contents("errdata",print_r($e,true));
 	}
 });
-
+*/
 // Reply-Кнопки
 $bot->command("buttons", function ($message) use ($bot) {
 	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Пройти тест"],["text" => "Информация о кафедре"], ["text" => "Задать вопрос"], ["text" => "Контакты"]]], true, true);
