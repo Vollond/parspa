@@ -68,7 +68,6 @@ $bot->command('start', function ($message) use ($bot) {
 		[
 			[
 				['callback_data' => 'data_test', 'text' => "love1111"],
-				['callback_data' => 'data_test2', 'text' => 'ОтветЪ']
 			]
 		]
 	);
@@ -76,7 +75,6 @@ $bot->command('start', function ($message) use ($bot) {
 		[
 			[
 				['callback_data' => 'data_test', 'text' => "love1"],
-				['callback_data' => 'data_test2', 'text' => 'ОтветЪ']
 			]
 		]
 	);
