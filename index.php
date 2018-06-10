@@ -226,10 +226,7 @@ $bot->sendMessage("@kaftest", "watfhjkhgfd**saST**FHYJGFDSADFTGHJSD S DS F123SAD
 // помощ
 $bot->command('help', function ($message) use ($bot) {
     $answer = 'Команды:
-/ibutton - кнопки в сообщении
 /buttons - reply-панель с кнопками
-/getdoc - тестовый документ
-/help - помощ
 ';
     $bot->sendMessage($message->getChat()->getId(), $answer);
 });
@@ -367,9 +364,7 @@ $bot->inlineQuery(function ($inlineQuery) use ($bot) {
 
 // Reply-Кнопки
 $bot->command("buttons", function ($message) use ($bot) {
-	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Пройти тест"], ["text" => "Сиськи!"],["text" => "Информация о кафедре"], ["text" => "Задать вопрос"]]], true, true);
-
-	$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null, $keyboard);
+	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Пройти тест"],["text" => "Информация о кафедре"], ["text" => "Задать вопрос"]]], true, true);
 });
 
 
@@ -488,14 +483,8 @@ $bot->on(function($Update) use ($bot){
 		}
 	
 	
-	if(mb_stripos($mtext,"Сиськи") !== false){
-		$pic = "http://aftamat4ik.ru/wp-content/uploads/2017/05/14277366494961.jpg";
 
-		$bot->sendPhoto($message->getChat()->getId(), $pic);
-	}
-	if(mb_stripos($mtext,"власть советам") !== false){
-		$bot->sendMessage($message->getChat()->getId(), "Смерть богатым!");
-	}
+
 	
 	$data = get_udata($message->getFrom()->getUsername()); // получаем массив данных
 	if(!isset($data["obrsv1"])){ // если в нем нет режима - значит человек еще не взаимодействовал с этой командой
@@ -505,7 +494,6 @@ $bot->on(function($Update) use ($bot){
 	}
 	
 	if(mb_stripos($mtext,"Задать вопрос") !== false){
-		// по команде /dbact запускаем цепочку
 		$data["obrsv1"] = "on";
 		set_udata($message->getFrom()->getUsername(), $data); 
 		$bot->sendMessage($message->getChat()->getId(), "Напишите свой вопрос и вам ответят в ближайшее время");
