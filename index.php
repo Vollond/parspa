@@ -71,7 +71,16 @@ $bot->command('start', function ($message) use ($bot) {
 			]
 		]
 	);
-$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null,$like);
+	$like2 = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
+		[
+			[
+				['callback_data' => 'data_test', 'text' => "love1"],
+				['callback_data' => 'data_test2', 'text' => 'ОтветЪ']
+			]
+		]
+	);
+	
+$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null,$like2);
 });
 
 
@@ -86,15 +95,8 @@ $bot->on(function($update) use ($bot, $callback_loc, $find_command){
 
 	if($data == "data_test"){
 		//$love1="$text 1";
-			$like2 = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
-		[
-			[
-				['callback_data' => 'data_test', 'text' => "love1"],
-				['callback_data' => 'data_test2', 'text' => 'ОтветЪ']
-			]
-		]
-	); //$callback->getId()
-		$bot->editMessageReplyMarkup($chatId, $message->getMessageId(),null, text="123");
+			 //$callback->getId()
+		$bot->editMessageReplyMarkup($chatId, $message->getMessageId(),null, $like);
 		}
 	//	$bot->editMessageReplyMarkup($chatId,$message, $inlmsgid,$like2);
 	//	$bot->answerCallbackQuery( $callback->getId(), "This is Ansver!",true);	}
