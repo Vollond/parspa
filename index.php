@@ -364,8 +364,9 @@ $bot->inlineQuery(function ($inlineQuery) use ($bot) {
 
 // Reply-Кнопки
 $bot->command("buttons", function ($message) use ($bot) {
-	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Пройти тест"],["text" => "Информация о кафедре"], ["text" => "Задать вопрос"]]], true, true);
-});
+	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Пройти тест"],["text" => "Информация о кафедре"], ["text" => "Задать вопрос"], ["text" => "Контакты"]]], true, true);
+$bot->sendMessage($message->getChat()->getId(), "", false, null,null, $keyboard);
+	});
 
 
 // регистрация юзера
@@ -463,6 +464,26 @@ $bot->on(function($Update) use ($bot){
 
 //
 	if(mb_stripos($mtext,"Информация о кафедре") !== false){
+		$k_img="http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2018/03/Plakat-min-768x1181.jpg";
+		$k_txt = "
+Вас приветствует коллектив кафедры компьютерного моделирования процессов и систем!
+[Информационный ролик о специальностях кафедры](https://www.youtube.com/watch?v=HsKNzXDoHps)
+Кафедра была создана в 1964 году для подготовки кадров высшей квалификации, которые обладали бы как практической инженерной подготовкой, так и фундаментальными знаниями в области математики и информационных технологий. Система обучения студентов, созданная к тому времени в инженерно-физическом институте, стала использоваться для подготовки инженеров — разработчиков систем управления различных летательных аппаратов, в том числе и космических.
+
+В течении прошедших десятилетий кафедрой выпущено более полутора тысяч специалистов, которые работают на таких предприятиях, как НПО «ХАРТРОН-АРКОС», завод им. Шевченко, НИИ комплексной автоматизации, в университетах и научных институтах.
+
+[Информация для абитуриентов](http://web.kpi.kharkov.ua/cmps/ru/abiturientam/)
+
+";
+	$k_txt2 = "		В настоящее время кафедра готовит бакалавров, инженеров и магистров по специальностям:  [⁠]($k_img)
+- [Прикладная математика](http://web.kpi.kharkov.ua/cmps/ru/prikladnaya-matematika/) 
+- [Компьютерные науки](http://web.kpi.kharkov.ua/cmps/ru/kompyuternye-nauki-i-informatsionnye-tehnologii/)";
+
+		$bot->sendMessage($message->getChat()->getId(), $k_txt, "markdown",$like);	
+		$bot->sendMessage($message->getChat()->getId(), $k_txt2, "markdown",$like);	
+		}
+		
+	if(mb_stripos($mtext,"Контакты") !== false){
 		$k_img="http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2018/03/Plakat-min-768x1181.jpg";
 		$k_txt = "
 Вас приветствует коллектив кафедры компьютерного моделирования процессов и систем!
