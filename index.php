@@ -64,14 +64,14 @@ $bot->command('start', function ($message) use ($bot) {
 	
 	$bot->command('like', function ($message) use ($bot) {
 		
-$arrayl[] = ['callback_data' => 'data_test', 'text' => "123"];
+$arrayl[] = [['callback_data' => 'data_test', 'text' => "123"]];
  
 //	$keyboard_l = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup($arrayl[]);
 
 	$like = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
-		[
+		
 				$arrayl
-		]
+		
 	);
 	$like2 = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
 		[
@@ -98,7 +98,7 @@ $bot->on(function($update) use ($bot, $callback_loc, $find_command){
 		//$love1="$text 1";
 			 //$callback->getId()
 
-		$bot->editMessageReplyMarkup($chatId, $message->getMessageId(),null, [$arrayl]);
+		$bot->editMessageReplyMarkup($chatId, $message->getMessageId(),null, $arrayl);
 		}
 	//	$bot->editMessageReplyMarkup($chatId,$message, $inlmsgid,$like2);
 	//	$bot->answerCallbackQuery( $callback->getId(), "This is Ansver!",true);	}
