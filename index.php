@@ -475,7 +475,7 @@ $bot->on(function($Update) use ($bot){
 В течении прошедших десятилетий кафедрой выпущено более полутора тысяч специалистов, которые работают на таких предприятиях, как НПО «ХАРТРОН-АРКОС», завод им. Шевченко, НИИ комплексной автоматизации, в университетах и научных институтах.
 
 В настоящее время кафедра готовит бакалавров, инженеров и магистров по специальностям:
-[Прикладная математика]("http://web.kpi.kharkov.ua/cmps/ru/prikladnaya-matematika/") [Компьютерные науки]("http://web.kpi.kharkov.ua/cmps/ru/kompyuternye-nauki-i-informatsionnye-tehnologii/")
+[Прикладная математика](http://web.kpi.kharkov.ua/cmps/ru/prikladnaya-matematika/) [Компьютерные науки](http://web.kpi.kharkov.ua/cmps/ru/kompyuternye-nauki-i-informatsionnye-tehnologii/)
  [⁠]($k_img)
 ';
 		$bot->sendMessage($message->getChat()->getId(), $k_txt, "markdown",$like);	}
