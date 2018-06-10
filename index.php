@@ -96,7 +96,7 @@ $bot->on(function($update) use ($bot, $callback_loc, $find_command){
 		//$love1="$text 1";
 			 //$callback->getId()
 
-		$bot->editMessageReplyMarkup($chatId, $message->getMessageId(), $like);
+		$bot->editMessageReplyMarkup($chatId, $message->getMessageId(),null, $like2);
 		}
 	//	$bot->editMessageReplyMarkup($chatId,$message, $inlmsgid,$like2);
 	//	$bot->answerCallbackQuery( $callback->getId(), "This is Ansver!",true);	}
