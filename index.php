@@ -86,7 +86,7 @@ $bot->on(function($update) use ($bot, $callback_loc, $find_command){
 
 	if($data == "data_test"){
 		//$love1="$text 1";
-			$like2 = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
+			$like2 = (
 		[
 			[
 				['callback_data' => 'data_test', 'text' => "love1"],
