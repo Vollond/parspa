@@ -475,14 +475,15 @@ $bot->on(function($Update) use ($bot){
 
 В течении прошедших десятилетий кафедрой выпущено более полутора тысяч специалистов, которые работают на таких предприятиях, как НПО «ХАРТРОН-АРКОС», завод им. Шевченко, НИИ комплексной автоматизации, в университетах и научных институтах.
 
-В настоящее время кафедра готовит бакалавров, инженеров и магистров по специальностям:  [⁠]($k_img)
+[Информация для абитуриентов](http://web.kpi.kharkov.ua/cmps/ru/abiturientam/)
+
+";
+	$k_txt2 = "		В настоящее время кафедра готовит бакалавров, инженеров и магистров по специальностям:  [⁠]($k_img)
 - [Прикладная математика](http://web.kpi.kharkov.ua/cmps/ru/prikladnaya-matematika/) 
-- [Компьютерные науки](http://web.kpi.kharkov.ua/cmps/ru/kompyuternye-nauki-i-informatsionnye-tehnologii/)
+- [Компьютерные науки](http://web.kpi.kharkov.ua/cmps/ru/kompyuternye-nauki-i-informatsionnye-tehnologii/)";
 
-         [Информация для абитуриентов](http://web.kpi.kharkov.ua/cmps/ru/abiturientam/)
-
-";		$bot->sendPhoto($message->getChat()->getId(), $k_img);
 		$bot->sendMessage($message->getChat()->getId(), $k_txt, "markdown",$like);	
+		$bot->sendMessage($message->getChat()->getId(), $k_txt2, "markdown",$like);	
 		}
 	
 	
