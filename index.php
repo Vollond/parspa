@@ -286,6 +286,7 @@ $bot->command("ibutton", function ($message) use ($bot) {
 });
 
 // Обработка кнопок у сообщений
+/*
 $bot->on(function($update) use ($bot, $callback_loc, $find_command){
 	$callback = $update->getCallbackQuery();
 	$message = $callback->getMessage();
@@ -309,7 +310,7 @@ $bot->on(function($update) use ($bot, $callback_loc, $find_command){
 		return false;
 	return true;
 });
-
+*/
 // обработка инлайнов
 $bot->inlineQuery(function ($inlineQuery) use ($bot) {
 	mb_internal_encoding("UTF-8");
