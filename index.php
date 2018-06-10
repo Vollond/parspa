@@ -592,8 +592,8 @@ $bot->sendMessage($message->getChat()->getId(), "Выберете 1, 2 или 3?
 
 		$data["3"] = $mtext;
 				set_udata($message->getFrom()->getUsername(), $data); 
+				$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Пройти тест"],["text" => "Информация о кафедре"], ["text" => "Задать вопрос"], ["text" => "Контакты"]]], true, true);
 				$bot->sendMessage($message->getChat()->getId(), "Вы прошли тест. Результы будут позже", false, null,null, $keyboard);
-
 	}
 
 	//1+2-3+4-5/ if>5, вы дизайнер.
