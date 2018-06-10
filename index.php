@@ -506,11 +506,11 @@ $bot->on(function($Update) use ($bot){
 +38(057)707-64-54
 e-mail: brdm@kpi.kharkov.ua
 e-mail: cmpskhpi@gmail.com
+	[Сайт](http://web.kpi.kharkov.ua/cmps/ru/kafedra-cmps/)
 	[Фейсбук](https://www.facebook.com/official.cmps/)
 	[Инстаграм](https://www.instagram.com/official_cmps/)
 	[Группа в вк](https://vk.com/official_cmps)
 	[Канал в телеграме](https://t.me/official_cmps)
-	[Сайт](http://web.kpi.kharkov.ua/cmps/ru/kafedra-cmps/)
 ";
 
 		//$bot->sendMessage($message->getChat()->getId(), $k_txt, "markdown",$like);	
