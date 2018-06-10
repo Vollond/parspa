@@ -365,7 +365,7 @@ $bot->inlineQuery(function ($inlineQuery) use ($bot) {
 // Reply-Кнопки
 $bot->command("buttons", function ($message) use ($bot) {
 	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Пройти тест"],["text" => "Информация о кафедре"], ["text" => "Задать вопрос"], ["text" => "Контакты"]]], true, true);
-$bot->sendMessage($message->getChat()->getId(), "", false, null,null, $keyboard);
+$bot->sendMessage($message->getChat()->getId(), "⁠⁠⁠⁠", false, null,null, $keyboard);
 	});
 
 
