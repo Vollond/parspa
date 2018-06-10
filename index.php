@@ -60,7 +60,9 @@ $bot->command('start', function ($message) use ($bot) {
 });
 
 
-	
+	ctx.editMessageReplyMarkup(
+    { inline_keyboard:[[{text:'new button', callback_data:'callback_data'}]]  }
+)
 	
 	$bot->command('like', function ($message) use ($bot) {
 		
@@ -95,7 +97,9 @@ $bot->on(function($update) use ($bot, $callback_loc, $find_command){
 	if($data == "data_test"){
 		//$love1="$text 1";
 			 //$callback->getId()
-		$bot->editMessageReplyMarkup($chatId, $message->getMessageId(), $like);
+			 
+			 
+		$bot->editMessageReplyMarkup($chatId, $message->getMessageId(), $like2);
 		}
 	//	$bot->editMessageReplyMarkup($chatId,$message, $inlmsgid,$like2);
 	//	$bot->answerCallbackQuery( $callback->getId(), "This is Ansver!",true);	}
