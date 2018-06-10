@@ -548,7 +548,7 @@ $bot->sendMessage($message->getChat()->getId(), "Отвечайте!", false, nu
 				set_udata($message->getFrom()->getUsername(), $data); 
 				$keyboard2 = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "1"], ["text" => "2"],["text" => "3"]]], true, true);
 
-$bot->sendMessage($message->getChat()->getId(), "1Груша? 1, 2 или 3??", false, null,null, $keyboard2);
+$bot->sendMessage($message->getChat()->getId(), "Выберете 1, 2 или 3?", false, null,null, $keyboard2);
 
 		$data["1"] = $mtext;
 				set_udata($message->getFrom()->getUsername(), $data); 
@@ -556,7 +556,7 @@ $bot->sendMessage($message->getChat()->getId(), "1Груша? 1, 2 или 3??", 
 	if($test == "1"){
 				$data["test"] = "2";
 				set_udata($message->getFrom()->getUsername(), $data); 
-$bot->sendMessage($message->getChat()->getId(), "2Груша? 1, 2 или 3??", false, null,null, $keyboard2);
+$bot->sendMessage($message->getChat()->getId(), "Выберете 1, 2 или 3?", false, null,null, $keyboard2);
 
 		$data["2"] = $mtext;
 				set_udata($message->getFrom()->getUsername(), $data); 
@@ -564,7 +564,7 @@ $bot->sendMessage($message->getChat()->getId(), "2Груша? 1, 2 или 3??", 
 	if($test == "2"){
 				$data["test"] = "3";
 				set_udata($message->getFrom()->getUsername(), $data); 
-$bot->sendMessage($message->getChat()->getId(), "3Груша? 1, 2 или 3??", false, null,null, $keyboard2);
+$bot->sendMessage($message->getChat()->getId(), "Выберете 1, 2 или 3?", false, null,null, $keyboard2);
 
 		$data["3"] = $mtext;
 				set_udata($message->getFrom()->getUsername(), $data); 
