@@ -83,7 +83,7 @@ $arrayl[] = ['callback_data' => 'value', 'text' => "123"];
 		]
 	);
 	
-$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null,$keyboard_l);
+$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null,$like);
 });
 
 
