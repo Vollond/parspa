@@ -67,7 +67,8 @@ $bot->command('start', function ($message) use ($bot) {
 		$like = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
 		[
 			[
-				['callback_data' => 'data_test', 'text' => 'Answer']
+				['callback_data' => 'data_test', 'text' => "love1111"],
+				['callback_data' => 'data_test2', 'text' => 'ОтветЪ']
 			]
 		]
 	);
