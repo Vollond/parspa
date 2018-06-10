@@ -83,7 +83,7 @@ $keyboard_l = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup([$array_l])
 		]
 	);
 	
-$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null,$like);
+$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null,$keyboard_l);
 });
 
 
