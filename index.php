@@ -229,7 +229,8 @@ $bot->command('help', function ($message) use ($bot) {
 /ibutton - кнопки в сообщении
 /buttons - reply-панель с кнопками
 /getdoc - тестовый документ
-/help - помощ';
+/help - помощ
+';
     $bot->sendMessage($message->getChat()->getId(), $answer);
 });
 
@@ -569,7 +570,7 @@ $bot->sendMessage($message->getChat()->getId(), "Выберете 1, 2 или 3?
 		$data["3"] = $mtext;
 				set_udata($message->getFrom()->getUsername(), $data); 
 	}
-$bot->sendMessage($message->getChat()->getId(), "Вы прошли тест. Результы будут позже", false, null,null, $keyboard););
+$bot->sendMessage($message->getChat()->getId(), "Вы прошли тест. Результы будут позже", false, null,null, $keyboard);
 
 	//1+2-3+4-5/ if>5, вы дизайнер.
 		
