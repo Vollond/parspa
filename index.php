@@ -512,7 +512,7 @@ e-mail: cmpskhpi@gmail.com
 	[Группа в вк](https://vk.com/official_cmps)
 	[Канал в телеграме](https://t.me/official_cmps)
 ";
-		$bot->sendMessage($message->getChat()->getId(), $k_txt3, "markdown", false);	
+		$bot->sendMessage($message->getChat()->getId(), $k_txt3, "markdown", false, null, null, null);	
 		}
 	
 	
