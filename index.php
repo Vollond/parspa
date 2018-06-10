@@ -87,15 +87,15 @@ $bot->on(function($update) use ($bot, $callback_loc, $find_command){
 	$callback = $update->getCallbackQuery();
 	$message = $callback->getMessage();
 	$chatId = $message->getChat()->getId();
+	$inlmsgid = $callback->getInlineMessageId();
 	$data = $callback->getData();
-	$inlmsgid = $data->getInlineMessageId();
 	//$text = $callback->getText();
 	//	$bot->sendMessage($message->getChat()->getId(), "$inlmsgid");
 
 	if($data == "data_test"){
 		//$love1="$text 1";
 			 //$callback->getId()
-		$bot->editMessageReplyMarkup($inlmsgid, $like);
+		$bot->editMessageReplyMarkup($chatId, $message->getMessageId(), $like);
 		}
 	//	$bot->editMessageReplyMarkup($chatId,$message, $inlmsgid,$like2);
 	//	$bot->answerCallbackQuery( $callback->getId(), "This is Ansver!",true);	}
