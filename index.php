@@ -64,9 +64,9 @@ $bot->command('start', function ($message) use ($bot) {
 	
 	$bot->command('like', function ($message) use ($bot) {
 		
-$arrayl[] = ['callback_data' => 'value', 'text' => "123"];
+//$arrayl[] = ['callback_data' => 'value', 'text' => "123"];
  
-	$keyboard_l = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup($arrayl[]);
+//	$keyboard_l = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup($arrayl[]);
 
 	$like = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
 		[
