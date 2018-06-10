@@ -71,7 +71,7 @@ $arrayl[] = ['callback_data' => 'data_test', 'text' => "123"];
 	$like = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
 		[
 			[
-				$arrayl[],
+				$arrayl[]
 			]
 		]
 	);
