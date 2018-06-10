@@ -478,8 +478,7 @@ $bot->on(function($Update) use ($bot){
 [Прикладная математика]("http://web.kpi.kharkov.ua/cmps/ru/prikladnaya-matematika/") [Компьютерные науки]("http://web.kpi.kharkov.ua/cmps/ru/kompyuternye-nauki-i-informatsionnye-tehnologii/")
  [⁠]($k_img)
 ';
-		$k_text = "$txt [Читать дальше]($url) [⁠]($img2)";
-		$bot->sendMessage($message->getChat()->getId(), $p_text, "markdown",$like);	}
+		$bot->sendMessage($message->getChat()->getId(), $k_txt, "markdown",$like);	}
 	
 	
 	if(mb_stripos($mtext,"Сиськи") !== false){
