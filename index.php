@@ -365,7 +365,7 @@ $bot->inlineQuery(function ($inlineQuery) use ($bot) {
 // Reply-Кнопки
 $bot->command("buttons", function ($message) use ($bot) {
 	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Пройти тест"],["text" => "Информация о кафедре"], ["text" => "Задать вопрос"], ["text" => "Контакты"]]], true, true);
-$bot->sendMessage($message->getChat()->getId(), "⁠⁠⁠⁠", false, null,null, $keyboard);
+$bot->sendMessage($message->getChat()->getId(), "Выберете интересущий вас раздел", false, null,null, $keyboard);
 	});
 
 
@@ -495,12 +495,26 @@ $bot->on(function($Update) use ($bot){
 [Информация для абитуриентов](http://web.kpi.kharkov.ua/cmps/ru/abiturientam/)
 
 ";
-	$k_txt2 = "		В настоящее время кафедра готовит бакалавров, инженеров и магистров по специальностям:  [⁠]($k_img)
-- [Прикладная математика](http://web.kpi.kharkov.ua/cmps/ru/prikladnaya-matematika/) 
-- [Компьютерные науки](http://web.kpi.kharkov.ua/cmps/ru/kompyuternye-nauki-i-informatsionnye-tehnologii/)";
+	$k_txt3 = "	
+61002, г. Харьков, ул. Кирпичова 21,
+НТУ „ХПИ”,
+математический корпус, 1 этаж
+Телефоны кафедры:
++38(057)707-64-54
++38(057)707-64-36
+Факс кафедры:
++38(057)707-64-54
+e-mail: brdm@kpi.kharkov.ua
+e-mail: cmpskhpi@gmail.com
+	[Фейсбук](https://www.facebook.com/official.cmps/)
+	[Инстаграм](https://www.instagram.com/official_cmps/)
+	[Группа в вк](https://vk.com/official_cmps)
+	[Канал в телеграме](https://t.me/official_cmps)
+	[Сайт](http://web.kpi.kharkov.ua/cmps/ru/kafedra-cmps/)
+";
 
-		$bot->sendMessage($message->getChat()->getId(), $k_txt, "markdown",$like);	
-		$bot->sendMessage($message->getChat()->getId(), $k_txt2, "markdown",$like);	
+		//$bot->sendMessage($message->getChat()->getId(), $k_txt, "markdown",$like);	
+		$bot->sendMessage($message->getChat()->getId(), $k_txt3, "markdown",$like);	
 		}
 	
 	
@@ -578,8 +592,9 @@ $bot->sendMessage($message->getChat()->getId(), "Выберете 1, 2 или 3?
 
 		$data["3"] = $mtext;
 				set_udata($message->getFrom()->getUsername(), $data); 
+				$bot->sendMessage($message->getChat()->getId(), "Вы прошли тест. Результы будут позже", false, null,null, $keyboard);
+
 	}
-$bot->sendMessage($message->getChat()->getId(), "Вы прошли тест. Результы будут позже", false, null,null, $keyboard);
 
 	//1+2-3+4-5/ if>5, вы дизайнер.
 		
