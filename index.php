@@ -478,6 +478,9 @@ $bot->on(function($Update) use ($bot){
 В настоящее время кафедра готовит бакалавров, инженеров и магистров по специальностям:  [⁠]($k_img)
 - [Прикладная математика](http://web.kpi.kharkov.ua/cmps/ru/prikladnaya-matematika/) 
 - [Компьютерные науки](http://web.kpi.kharkov.ua/cmps/ru/kompyuternye-nauki-i-informatsionnye-tehnologii/)
+
+         [Информация для абитуриентов](http://web.kpi.kharkov.ua/cmps/ru/abiturientam/)
+
 ";		$bot->sendPhoto($message->getChat()->getId(), $k_img);
 		$bot->sendMessage($message->getChat()->getId(), $k_txt, "markdown",$like);	
 		}
