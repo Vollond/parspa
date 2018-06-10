@@ -64,10 +64,9 @@ $bot->command('start', function ($message) use ($bot) {
 	
 	$bot->command('like', function ($message) use ($bot) {
 		
-$arrayl[] = ['callback_data' => 'value', 'text' => $value];
+//$arrayl[] = ['callback_data' => 'value', 'text' => $value];
  
-$keyboard_l = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup([
-$array_l] );
+//$keyboard_l = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup([$array_l] );
 
 		$like = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
 		[
@@ -84,7 +83,7 @@ $array_l] );
 		]
 	);
 	
-$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null,$keyboard_l);
+$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null,$like);
 });
 
 
