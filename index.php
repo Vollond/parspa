@@ -59,7 +59,6 @@ $bot->command('start', function ($message) use ($bot) {
 	make_user($message->getFrom()->getUsername(),$cid);
 });
 
-  { inline_keyboard:[[{text:'new button', callback_data:'callback_data'}]]  }
 
 	
 	$bot->command('like', function ($message) use ($bot) {
