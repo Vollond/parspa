@@ -479,8 +479,8 @@ $bot->on(function($Update) use ($bot){
 - [Прикладная математика](http://web.kpi.kharkov.ua/cmps/ru/prikladnaya-matematika/) 
 - [Компьютерные науки](http://web.kpi.kharkov.ua/cmps/ru/kompyuternye-nauki-i-informatsionnye-tehnologii/)";
 
-		$bot->sendMessage($message->getChat()->getId(), $k_txt, "markdown",$like);	
-		$bot->sendMessage($message->getChat()->getId(), $k_txt2, "markdown",$like);	
+		$bot->sendMessage($message->getChat()->getId(), $k_txt, "markdown");	
+		$bot->sendMessage($message->getChat()->getId(), $k_txt2, "markdown");	
 		}
 		
 	if(mb_stripos($mtext,"Контакты") !== false){
@@ -512,7 +512,7 @@ e-mail: cmpskhpi@gmail.com
 	[Группа в вк](https://vk.com/official_cmps)
 	[Канал в телеграме](https://t.me/official_cmps)
 ";
-		$bot->sendMessage($message->getChat()->getId(), $k_txt3, "markdown",$like, false);	
+		$bot->sendMessage($message->getChat()->getId(), $k_txt3, "markdown", false);	
 		}
 	
 	
