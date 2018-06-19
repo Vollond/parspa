@@ -342,7 +342,8 @@ $bot->on(function($Update) use ($bot){
 	}
 	
 	if(mb_stripos($mtext,"Пройти тест") !== false){
-		$data["test"] = "0";
+		$bot->sendMessage($message->getChat()->getId(), "Тест будет реализован позже", false, null,null, $keyboard);
+	/*	$data["test"] = "0";
 $keyboard2 = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "1"], ["text" => "2"],["text" => "3"]]], true, true);
 $bot->sendMessage($message->getChat()->getId(), "Отвечайте!", false, null,null, $keyboard2);
 	$bot->sendMessage($message->getChat()->getId(), "Выберете 1, 2 или 3?");
@@ -377,8 +378,7 @@ $bot->sendMessage($message->getChat()->getId(), "Выберете 1, 2 или 3?
 				$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Пройти тест"],["text" => "Информация о кафедре"], ["text" => "Задать вопрос"], ["text" => "Контакты"]]], true, true);
 				$bot->sendMessage($message->getChat()->getId(), "Вы прошли тест. Результы будут позже", false, null,null, $keyboard);
 	}
-
-	//1+2-3+4-5/ if>5, вы дизайнер.
+*/
 		
 	
 }, function($message) use ($name){
