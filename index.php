@@ -131,10 +131,12 @@ $img2 = preg_replace('/-\d\d\dx\d\d\d\./', '.', $img);
 
 	
 if ($img2!=null){
-$p_text = "$txt [Читать дальше]($url) [⁠]($img2)";
+$p_text = "$txt 
+[Читать дальше]($url) [⁠]($img2)";
 	}
 	else{
-$p_text = "$txt [Читать дальше]($url)";
+$p_text = "$txt 
+[Читать дальше]($url)";
 	}
 $bot->sendMessage("@kaftest", $p_text, "markdown",$like);
 
