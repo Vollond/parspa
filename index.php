@@ -1,13 +1,8 @@
 <?php
-/**
- * revcom_bot
- *
- * @author - Александр Штокман
- */
 header('Content-Type: text/html; charset=utf-8');
-// подрубаем API
+//  API
 require_once("vendor/autoload.php");
-// подрубаем базу данных
+//  база данных
 require_once("db_connect.php");
 require_once("users.php");
 require('PQ/phpQuery/phpQuery.php');
@@ -47,8 +42,6 @@ if(!file_exists("registered.trigger")){
 // пинг. Тестовая
 $bot->command('ping', function ($message) use ($bot) {
 	$bot->sendMessage($message->getChat()->getId(), 'pong!');
-	$bot->sendMessage($message->getChat()->getId(), $message->getReplyToMessage()->getText());
-	$bot->sendMessage($message->getChat()->getId(), 'pong2!');
 });
 		
 
@@ -59,71 +52,9 @@ $bot->command('start', function ($message) use ($bot) {
 	make_user($message->getFrom()->getUsername(),$cid);
 });
 
-
-	
-	$bot->command('like', function ($message) use ($bot) {
-		
-$arrayl[] = [['callback_data' => 'data_test', 'text' => "123"]];
-$arrayll[] = ['callback_data' => 'data_test', 'text' => "1111"];
-
-//	$keyboard_l = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup($arrayl[]);
-
-	$like = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
-		
-				$arrayl
-		
-	);
-	$like2 = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
-		[
-			[
-				['callback_data' => 'data_test', 'text' => "love1"],
-			]
-		]
-	);
-	
-$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null,$like);
-});
-
-
-$bot->on(function($update) use ($bot, $callback_loc, $find_command){
-	$callback = $update->getCallbackQuery();
-	$message = $callback->getMessage();
-	$chatId = $message->getChat()->getId();
-	$inlmsgid = $callback->getInlineMessageId();
-	$data = $callback->getData();
-	//$text = $callback->getText();
-	//	$bot->sendMessage($message->getChat()->getId(), "$inlmsgid");
-
-	if($data == "data_test"){
-		//$love1="$text 1";
-			 //$callback->getId()
-
-		$bot->editMessageReplyMarkup($chatId, $message->getMessageId(),null, $like2);
-		}
-	//	$bot->editMessageReplyMarkup($chatId,$message, $inlmsgid,$like2);
-	//	$bot->answerCallbackQuery( $callback->getId(), "This is Ansver!",true);	}
-	if($data == "data_test2"){
-		$bot->sendMessage($chatId, "Это ответ!");
-		$bot->answerCallbackQuery($callback->getId()); // можно отослать пустое, чтобы просто убрать "часики" на кнопке
-	}
-
-}, function($update){
-	$callback = $update->getCallbackQuery();
-	if (is_null($callback) || !strlen($callback->getData()))
-		return false;
-	return true;
-});
-
-
 	
 $bot->command('update_posts', function ($message) use ($bot) {
-/*	$img = "http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2018/03/28828314_1837764673183610_8045670836477995835_o-min-225x150.jpg";
-	$plink = "http://web.kpi.kharkov.ua/cmps/ru/kharkiv-project-management-day-krupnejshee-it-sobytie-v-ukraine/";
-	$ptext = "10 марта состоялась конференция, посвященная проектному менеджменту в IT — Kharkiv Project Management Day — крупнейшее событие в Украине. В конференции приняло участие около 400 проектных IT-менеджеров со всей страны. Своим опытом для них поделились более 40 опытных спикеров, среди них доцент кафедры компьютерного моделирования процессов и систем, к.т.н. — … ";
-	$p_text = "$ptext [Читать дальше]($plink)";
-	$bot->sendPhoto("@kaftest", $img);
-	$bot->sendMessage("@kaftest", $p_text, "markdown");
-*/
+
 
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
 $pq = phpQuery::newDocument($html);
@@ -147,14 +78,12 @@ phpQuery::unloadDocuments();
 foreach($art as $value){
 	
 $result=implode($value);
-//$bot->sendMessage("@kaftest", $result);
 
 
 	global $db;
 	$query = "insert into posts (num) values('{$result}')";
 	if (mysqli_query($db,$query)==true)
 	{
-		//$bot->sendMessage("@kaftest", "true");
 		
 		$post_id = $result;
 $html = file_get_contents("http://web.kpi.kharkov.ua/cmps/ru/category/glavnaya/");
@@ -242,127 +171,7 @@ $bot->command('savetest', function ($message) use ($bot) {
 	$bot->sendMessage($message->getChat()->getId(), "456");
 });
 
-/*	// сохранение тестовых данных
-	$data = array( "prevmsg" => $mtext );
-	set_udata($message->getFrom()->getUsername(), $data);
-	
-	// тест получения данных
-	$data = get_udata($message->getFrom()->getUsername());
-	$bot->sendMessage($message->getChat()->getId(), json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
-	*/
 
-
-
-
-
-// передаем картинку
-$bot->command('getpic', function ($message) use ($bot) {
-	$pic = "http://aftamat4ik.ru/wp-content/uploads/2017/03/photo_2016-12-13_23-21-07.jpg";
-
-    $bot->sendPhoto($message->getChat()->getId(), $pic);
-});
-/*
-// передаем документ
-$bot->command('getdoc', function ($message) use ($bot) {
-	$document = new \CURLFile('shtirner.txt');
-
-    $bot->sendDocument($message->getChat()->getId(), $document);
-});*/
-
-// Кнопки у сообщений
-$bot->command("ibutton", function ($message) use ($bot) {
-	$keyboard = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup(
-		[
-			[
-				['callback_data' => 'data_test', 'text' => 'Answer'],
-				['callback_data' => 'data_test2', 'text' => 'ОтветЪ']
-			]
-		]
-	);
-
-	$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null,$keyboard);
-});
-
-// Обработка кнопок у сообщений
-/*
-$bot->on(function($update) use ($bot, $callback_loc, $find_command){
-	$callback = $update->getCallbackQuery();
-	$message = $callback->getMessage();
-	$chatId = $message->getChat()->getId();
-	$data = $callback->getData();
-	
-	if($data == "data_test"){
-		$bot->editMessageReplyMarkup($chatId, $message->getMessageId(),null, $like2);
-		
-		$bot->answerCallbackQuery( $callback->getId(), "This is Ansver!",true);
-		
-	}
-	if($data == "data_test2"){
-		$bot->sendMessage($chatId, "Это ответ!");
-		$bot->answerCallbackQuery($callback->getId()); // можно отослать пустое, чтобы просто убрать "часики" на кнопке
-	}
-
-}, function($update){
-	$callback = $update->getCallbackQuery();
-	if (is_null($callback) || !strlen($callback->getData()))
-		return false;
-	return true;
-});
-*/
-// обработка инлайнов
-/*
-$bot->inlineQuery(function ($inlineQuery) use ($bot) {
-	mb_internal_encoding("UTF-8");
-	$qid = $inlineQuery->getId();
-	$text = $inlineQuery->getQuery();
-	
-	// Это - базовое содержимое сообщения, оно выводится, когда тыкаем на выбранный нами инлайн
-	$str = "Что другие?
-Свора голодных нищих.
-Им все равно...
-В этом мире немытом
-Душу человеческую
-Ухорашивают рублем,
-И если преступно здесь быть бандитом,
-То не более преступно,
-Чем быть королем...
-Я слышал, как этот прохвост
-Говорил тебе о Гамлете.
-Что он в нем смыслит?
-<b>Гамлет</b> восстал против лжи,
-В которой варился королевский двор.
-Но если б теперь он жил,
-То был бы бандит и вор.";
-	$base = new \TelegramBot\Api\Types\Inline\InputMessageContent\Text($str,"Html");
-	
-	// Это список инлайнов
-	// инлайн для стихотворения
-	$msg = new \TelegramBot\Api\Types\Inline\QueryResult\Article("1","С. Есенин","Отрывок из поэмы `Страна негодяев`");
-	$msg->setInputMessageContent($base); // указываем, что в ответ к этому сообщению надо показать стихотворение
-	
-	// инлайн для картинки
-	$full = "http://aftamat4ik.ru/wp-content/uploads/2017/05/14277366494961.jpg"; // собственно урл на картинку 
-	$thumb = "http://aftamat4ik.ru/wp-content/uploads/2017/05/14277366494961-150x150.jpg"; // и миниятюра
-	
-	$photo = new \TelegramBot\Api\Types\Inline\QueryResult\Photo("2",$full,$thumb);
-	
-	// инлайн для музыки
-	$url = "http://aftamat4ik.ru/wp-content/uploads/2017/05/mongol-shuudan_-_kozyr-nash-mandat.mp3";
-	$mp3 = new \TelegramBot\Api\Types\Inline\QueryResult\Audio("3",$url,"Монгол Шуудан - Козырь наш Мандат!");
-	
-	// инлайн для видео
-	$vurl = "http://aftamat4ik.ru/wp-content/uploads/2017/05/bb.mp4";
-	$thumb = "http://aftamat4ik.ru/wp-content/uploads/2017/05/joker_5-150x150.jpg";
-	$video = new \TelegramBot\Api\Types\Inline\QueryResult\Video("4",$vurl,$thumb, "video/mp4","коммунальные службы","тут тоже может быть описание");
-	
-	// отправка
-	try{
-		$result = $bot->answerInlineQuery( $qid, [$msg,$photo,$mp3,$video],100,false);
-	}catch(Exception $e){
-		file_put_contents("errdata",print_r($e,true));
-	}
-});
-*/
 // Reply-Кнопки
 $bot->command("buttons", function ($message) use ($bot) {
 	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Пройти тест"],["text" => "Информация о кафедре"], ["text" => "Задать вопрос"], ["text" => "Контакты"]]], true, true);
@@ -376,17 +185,8 @@ $bot->on(function($Update) use ($bot){
 	$mtext = $message->getText();
 	$cid = $message->getChat()->getId();
 	
-	//make_user($message->getFrom()->getUsername(),$cid);
 	
 	
-/*	// сохранение тестовых данных
-	$data = array( "prevmsg" => $mtext );
-	set_udata($message->getFrom()->getUsername(), $data);
-	
-	// тест получения данных
-	$data = get_udata($message->getFrom()->getUsername());
-	$bot->sendMessage($message->getChat()->getId(), json_encode($data,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
-	*/
 	
 	$data = get_udata($message->getFrom()->getUsername()); // получаем массив данных
 	if(!isset($data["mode"])){ // если в нем нет режима - значит человек еще не взаимодействовал с этой командой
@@ -431,23 +231,6 @@ $bot->sendMessage($message->getChat()->getId(), "старт");
 // Отлов любых сообщений + обрабтка reply-кнопок
 $bot->on(function($Update) use ($bot){
 	
-	/* обработка постов из канала
-	$cpost = $Update->getChannelPost();
-	if($cpost){
-		// текст
-		$text = $cpost->getText();
-		// фотки
-		$photo = $cpost->getPhoto();
-		if($photo){
-			$photo_id = $photo[0]->getFileId();
-			$file = $bot->getFile($photo_id);
-			$furl = $bot->getFileUrl().'/'.$file->getFilePath();
-			file_put_contents(basename($furl), file_get_contents( $furl ) );
-		}
-		file_put_contents("lastmsg",$text);
-	}*/
-	// все что ниже - нахуй не нужно(внашем случае)!
-	//file_put_contents("mtext",$bot->getRawBody()); - получение всего json ответа
 	$message = $Update->getMessage();
 	$mtext = $message->getText();
 	$cid = $message->getChat()->getId();
