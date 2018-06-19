@@ -482,6 +482,7 @@ $bot->on(function($Update) use ($bot){
 		$bot->sendMessage($message->getChat()->getId(), $k_txt2, "markdown");	
 		$bot->sendPhoto($message->getChat()->getId(), $k_img);
 		$bot->sendDocument($message->getChat()->getId(), $k_img);
+		$bot->sendDocument($message->getChat()->getId(), "http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2016/02/Animatsiya-na-sajt-menshe-8-mb.gif");
 		}
 		
 	if(mb_stripos($mtext,"Контакты") !== false){
