@@ -50,8 +50,9 @@ $bot->command('start', function ($message) use ($bot) {
     $answer = 'Добро пожаловать!';
     $bot->sendMessage($message->getChat()->getId(), $answer);
 	make_user($message->getFrom()->getUsername(),$cid);
+	/*
 $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Пройти тест"],["text" => "Информация о кафедре"], ["text" => "Задать вопрос"], ["text" => "Контакты"]]], true, true);
-$bot->sendMessage($message->getChat()->getId(), "Выберете интересущий вас раздел", false, null,null, $keyboard);
+$bot->sendMessage($message->getChat()->getId(), "Выберете интересущий вас раздел", false, null,null, $keyboard); */
 });
 
 	
