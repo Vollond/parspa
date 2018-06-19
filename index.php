@@ -322,8 +322,8 @@ e-mail: cmpskhpi@gmail.com
 	if($obrsv1 == "on"){
 	$message = $Update->getMessage();
 	$mtext = $message->getText();
+	$data["obrsv1"] = "off";
 		if ((mb_stripos($mtext,"Пройти тест") == false)&&(mb_stripos($mtext,"Контакты") == false) &&(mb_stripos($mtext,"Информация о кафедре") == false) &&(mb_stripos($mtext,"Задать вопрос") == false)){
-				$data["obrsv1"] = "off";
 				set_udata($message->getFrom()->getUsername(), $data); 
 				$bot->forwardMessage(322682583,$message->getChat()->getId(), $message->getMessageId());
 		}
