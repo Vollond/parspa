@@ -328,15 +328,17 @@ e-mail: cmpskhpi@gmail.com
 	return true; // когда тут true - команда проходит
 });
 
-
+if(mb_stripos($mtext,"Пройти тест") !== false){
+			$bot->sendMessage($message->getChat()->getId(), "Тест будет позже", false, null,null, $keyboard);
+	}
 // тест
+/*
 $bot->on(function($Update) use ($bot){
 	
 	$message = $Update->getMessage();
 	$mtext = $message->getText();
 	$cid = $message->getChat()->getId();
-	$bot->sendMessage($message->getChat()->getId(), "Тест будет позже", false, null,null, $keyboard);
-	/*
+	
 	$data = get_udata($message->getFrom()->getUsername()); // получаем массив данных
 	if(!isset($data["test"])){ // если в нем нет режима - значит человек еще не взаимодействовал с этой командой
 		$test = "off"; // поэтому задаем ему действие по дефолту
@@ -385,8 +387,8 @@ $bot->sendMessage($message->getChat()->getId(), "Выберете 1, 2 или 3?
 		
 }, function($message) use ($name){
 	return true; // когда тут true - команда проходит
-	*/
-});
+	
+});*/
 
 
 // обратная связь
