@@ -477,9 +477,8 @@ $bot->on(function($Update) use ($bot){
 -«Проектирование, создание и анализ компьютерных систем»
 [Информация для абитуриентов](http://web.kpi.kharkov.ua/cmps/ru/abiturientam/)
 ";
-		
-		$bot->sendDocument($message->getChat()->getId(), "http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2016/02/Animatsiya-na-sajt-menshe-8-mb.gif");
 		$bot->sendVideo($message->getChat()->getId(), "http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2016/02/Animatsiya-na-sajt-menshe-8-mb.gif");
+		$bot->sendDocument($message->getChat()->getId(), "http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2016/02/Animatsiya-na-sajt-menshe-8-mb.gif");
 		$bot->sendMessage($message->getChat()->getId(), $k_txt, "markdown");	
 		$bot->sendMessage($message->getChat()->getId(), $k_txt2, "markdown");	
 
