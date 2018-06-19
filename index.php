@@ -331,10 +331,12 @@ e-mail: cmpskhpi@gmail.com
 
 // тест
 $bot->on(function($Update) use ($bot){
+	
 	$message = $Update->getMessage();
 	$mtext = $message->getText();
 	$cid = $message->getChat()->getId();
-	
+	$bot->sendMessage($message->getChat()->getId(), "Тест будет позже", false, null,null, $keyboard);
+	/*
 	$data = get_udata($message->getFrom()->getUsername()); // получаем массив данных
 	if(!isset($data["test"])){ // если в нем нет режима - значит человек еще не взаимодействовал с этой командой
 		$test = "off"; // поэтому задаем ему действие по дефолту
@@ -379,11 +381,11 @@ $bot->sendMessage($message->getChat()->getId(), "Выберете 1, 2 или 3?
 				$bot->sendMessage($message->getChat()->getId(), "Вы прошли тест. Результы будут позже", false, null,null, $keyboard);
 	}
 
-	//1+2-3+4-5/ if>5, вы дизайнер.
-		
 	
+		
 }, function($message) use ($name){
 	return true; // когда тут true - команда проходит
+	*/
 });
 
 
