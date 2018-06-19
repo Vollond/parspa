@@ -478,10 +478,10 @@ $bot->on(function($Update) use ($bot){
 [Информация для абитуриентов](http://web.kpi.kharkov.ua/cmps/ru/abiturientam/)
 ";
 	
-	//	$bot->sendDocument($message->getChat()->getId(), "http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2016/02/Animatsiya-na-sajt-menshe-8-mb.gif");
+		$bot->sendDocument($message->getChat()->getId(), "http://i.yapx.ru/BkXUO.gif");
 		$bot->sendMessage($message->getChat()->getId(), $k_txt, "markdown");	
 		$bot->sendMessage($message->getChat()->getId(), $k_txt2, "markdown");	
-		$bot->sendVideo($message->getChat()->getId(), "http://i.yapx.ru/BkXUO.gif");
+		$bot->sendVideo($message->getChat()->getId(), "http://i.yapx.ru/BkXUO.mp4");
 		}
 		
 	if(mb_stripos($mtext,"Контакты") !== false){
