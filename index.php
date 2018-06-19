@@ -300,7 +300,10 @@ e-mail: cmpskhpi@gmail.com
 		$bot->sendMessage($message->getChat()->getId(), $k_txt3, "markdown", true, null, null, null);	
 		}
 	
-	
+	if(mb_stripos($mtext,"Пройти тест") !== false){
+			$data["obrsv1"] = "off";
+			$bot->sendMessage($message->getChat()->getId(), "Тест будет позже", false, null,null, $keyboard);
+	}
 
 
 	
@@ -328,9 +331,7 @@ e-mail: cmpskhpi@gmail.com
 	return true; // когда тут true - команда проходит
 });
 
-if(mb_stripos($mtext,"Пройти тест") !== false){
-			$bot->sendMessage($message->getChat()->getId(), "Тест будет позже", false, null,null, $keyboard);
-	}
+
 // тест
 /*
 $bot->on(function($Update) use ($bot){
