@@ -147,14 +147,6 @@ $bot->sendMessage("@kaftest", $p_text, "markdown",$like);
 }
 });
 
-$bot->command('image', function ($message) use ($bot) {
-    $answer = 'Команды:
-/ibutton - кнопки в сообщении
-/buttons - reply-панель с кнопками
-/getdoc - тестовый документ
-/help - помощ';
-$bot->sendMessage("@kaftest", "watfhjkhgfd**saST**FHYJGFDSADFTGHJSD S DS F123SADsdad [⁠](http://web.kpi.kharkov.ua/cmps/wp-content/uploads/sites/144/2018/05/photo_2018-05-25_00-13-04-min.jpg)", "markdown");
-});
 
 
 // помощ
