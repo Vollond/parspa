@@ -138,7 +138,7 @@ $p_text = "$txt
 $p_text = "$txt 
 [Читать дальше]($url)";
 	}
-$bot->sendMessage("@kaftest", $p_text, "markdown",$like);
+$bot->sendMessage("@official_cmps", $p_text, "markdown",$like);
 
 		
 }
@@ -320,7 +320,7 @@ e-mail: cmpskhpi@gmail.com
 	set_udata($message->getFrom()->getUsername(), $data); 
 		//if ((mb_stripos($mtext,"Пройти тест") == false)&&(mb_stripos($mtext,"Контакты") == false) &&(mb_stripos($mtext,"Информация о кафедре") == false) &&(mb_stripos($mtext,"Задать вопрос") == false)){
 			if(($mtext != "Контакты")&&($mtext != "Информация о кафедре")&&($mtext != "Задать вопрос")&&($mtext != "Пройти тест")){
-				$bot->forwardMessage(322682583,$message->getChat()->getId(), $message->getMessageId());
+				$bot->forwardMessage("@nitcshe",$message->getChat()->getId(), $message->getMessageId());
 			}
 //		}
 	}
