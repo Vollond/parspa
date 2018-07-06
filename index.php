@@ -395,8 +395,7 @@ $bot->sendMessage($message->getChat()->getId(), "Выберете 1, 2 или 3?
 $bot->on(function($Update) use ($bot){
 	$message = $Update->getMessage();
 	$mtext = $message->getText();
-	$cid = $message->getChat()->getId();
-	$uid = $message->getFrom()->getUsername();
+	$uid = $message->getFrom()->getId();
 if($uid == 322682583){
 		if($message->getReplyToMessage()->getText() !== false){
 			$bot->sendMessage($message->getReplyToMessage()->getForwardfrom()->getId(), $mtext);
