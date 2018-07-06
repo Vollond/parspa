@@ -397,7 +397,7 @@ $bot->on(function($Update) use ($bot){
 	$mtext = $message->getText();
 	$cid = $message->getChat()->getId();
 	
-if($message->getReplyToMessage()->getText() != null){
+if($message->getReplyToMessage()->getText() !== null){
 		if($message->getReplyToMessage()->getText() !== false){
 			$bot->sendMessage($message->getReplyToMessage()->getForwardfrom()->getId(), $mtext);
 }}
