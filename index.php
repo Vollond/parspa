@@ -396,10 +396,11 @@ $bot->on(function($Update) use ($bot){
 	$message = $Update->getMessage();
 	$mtext = $message->getText();
 	$cid = $message->getChat()->getId();
-
+	
+if($caption->getText() != null){
 		if($message->getReplyToMessage()->getText() !== false){
-$bot->sendMessage($message->getReplyToMessage()->getForwardfrom()->getId(), $mtext);
-	}
+			$bot->sendMessage($message->getReplyToMessage()->getForwardfrom()->getId(), $mtext);
+}}
 	
 }, function($message) use ($name){
 	return true; // когда тут true - команда проходит
