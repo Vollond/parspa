@@ -320,7 +320,7 @@ e-mail: cmpskhpi@gmail.com
 	set_udata($message->getFrom()->getUsername(), $data); 
 		//if ((mb_stripos($mtext,"Пройти тест") == false)&&(mb_stripos($mtext,"Контакты") == false) &&(mb_stripos($mtext,"Информация о кафедре") == false) &&(mb_stripos($mtext,"Задать вопрос") == false)){
 			if(($mtext != "Контакты")&&($mtext != "Информация о кафедре")&&($mtext != "Задать вопрос")&&($mtext != "Пройти тест")){
-				$bot->forwardMessage(322682583,$message->getChat()->getId(), $message->getMessageId());
+				$bot->forwardMessage(387839105,$message->getChat()->getId(), $message->getMessageId());
 			}
 //		}
 	}
@@ -396,7 +396,7 @@ $bot->on(function($Update) use ($bot){
 	$message = $Update->getMessage();
 	$mtext = $message->getText();
 	$uid = $message->getFrom()->getId();
-if($uid == 322682583){
+if($uid == 387839105){
 		if($message->getReplyToMessage()->getText() !== false){
 			$bot->sendMessage($message->getReplyToMessage()->getForwardfrom()->getId(), $mtext);
 }}
