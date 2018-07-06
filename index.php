@@ -397,10 +397,10 @@ $bot->on(function($Update) use ($bot){
 	$mtext = $message->getText();
 	$cid = $message->getChat()->getId();
 	
-if($message->getFrom()->getUsername()==322682583){
+//if($message->getFrom()->getUsername()==322682583){
 		if($message->getReplyToMessage()->getText() !== false){
 			$bot->sendMessage($message->getReplyToMessage()->getForwardfrom()->getId(), $mtext);
-}}
+}//}
 	
 }, function($message) use ($name){
 	return true; // когда тут true - команда проходит
